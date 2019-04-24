@@ -28,62 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainTabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.mainTabControl.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EntrySetupButton = new System.Windows.Forms.Button();
+            this.EntryContinueButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // mainTabControl
+            // label1
             // 
-            this.mainTabControl.Controls.Add(this.tabPage1);
-            this.mainTabControl.Controls.Add(this.tabPage2);
-            this.mainTabControl.Location = new System.Drawing.Point(12, 12);
-            this.mainTabControl.Name = "mainTabControl";
-            this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(760, 537);
-            this.mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.mainTabControl.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(145, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(453, 51);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PLANT EXPERIMENT";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // tabPage1
+            // EntrySetupButton
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(752, 511);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.EntrySetupButton.Location = new System.Drawing.Point(359, 151);
+            this.EntrySetupButton.Name = "EntrySetupButton";
+            this.EntrySetupButton.Size = new System.Drawing.Size(75, 23);
+            this.EntrySetupButton.TabIndex = 1;
+            this.EntrySetupButton.Text = "Setup";
+            this.EntrySetupButton.UseVisualStyleBackColor = true;
+            this.EntrySetupButton.Click += new System.EventHandler(this.EntrySetupButton_Click);
             // 
-            // tabPage2
+            // EntryContinueButton
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(752, 511);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.EntryContinueButton.Location = new System.Drawing.Point(359, 202);
+            this.EntryContinueButton.Name = "EntryContinueButton";
+            this.EntryContinueButton.Size = new System.Drawing.Size(75, 23);
+            this.EntryContinueButton.TabIndex = 2;
+            this.EntryContinueButton.Text = "Continue...";
+            this.EntryContinueButton.UseVisualStyleBackColor = true;
+            this.EntryContinueButton.Click += new System.EventHandler(this.EntryContinueButton_Click);
             // 
             // EntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.mainTabControl);
+            this.Controls.Add(this.EntryContinueButton);
+            this.Controls.Add(this.EntrySetupButton);
+            this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "EntryForm";
             this.Text = "Planters";
-            this.mainTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl mainTabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button EntrySetupButton;
+        private System.Windows.Forms.Button EntryContinueButton;
     }
 }
 

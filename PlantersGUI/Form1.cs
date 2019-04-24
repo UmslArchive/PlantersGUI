@@ -21,5 +21,25 @@ namespace PlantersGUI
         {
 
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EntrySetupButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EntryContinueButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
