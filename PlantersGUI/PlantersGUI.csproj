@@ -60,6 +60,12 @@
     <Compile Include="SetupForm.Designer.cs">
       <DependentUpon>SetupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableConfigForm.Designer.cs">
+      <DependentUpon>TableConfigForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="SetupForm.resx">
       <DependentUpon>SetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableConfigForm.resx">
+      <DependentUpon>TableConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

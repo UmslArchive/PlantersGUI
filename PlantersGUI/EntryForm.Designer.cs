@@ -50,7 +50,7 @@
             this.EntrySetupButton.Name = "EntrySetupButton";
             this.EntrySetupButton.Size = new System.Drawing.Size(75, 23);
             this.EntrySetupButton.TabIndex = 1;
-            this.EntrySetupButton.Text = "Setup";
+            this.EntrySetupButton.Text = "Setup...";
             this.EntrySetupButton.UseVisualStyleBackColor = true;
             this.EntrySetupButton.Click += new System.EventHandler(this.EntrySetupButton_Click);
             // 
@@ -60,7 +60,7 @@
             this.EntryContinueButton.Name = "EntryContinueButton";
             this.EntryContinueButton.Size = new System.Drawing.Size(75, 23);
             this.EntryContinueButton.TabIndex = 2;
-            this.EntryContinueButton.Text = "Continue...";
+            this.EntryContinueButton.Text = "Continue";
             this.EntryContinueButton.UseVisualStyleBackColor = true;
             this.EntryContinueButton.Click += new System.EventHandler(this.EntryContinueButton_Click);
             // 
