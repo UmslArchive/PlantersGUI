@@ -30,7 +30,7 @@
         {
             this.SetupForm_TabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
-            this.reportsTab = new System.Windows.Forms.TabPage();
+            this.tablesTab = new System.Windows.Forms.TabPage();
             this.ioLabel = new System.Windows.Forms.Label();
             this.deviceComboBox = new System.Windows.Forms.ComboBox();
             this.varNameLabel = new System.Windows.Forms.Label();
@@ -49,13 +49,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SetupForm_TabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
-            this.reportsTab.SuspendLayout();
+            this.tablesTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // SetupForm_TabControl
             // 
             this.SetupForm_TabControl.Controls.Add(this.deviceManageTab);
-            this.SetupForm_TabControl.Controls.Add(this.reportsTab);
+            this.SetupForm_TabControl.Controls.Add(this.tablesTab);
             this.SetupForm_TabControl.Location = new System.Drawing.Point(12, 12);
             this.SetupForm_TabControl.Name = "SetupForm_TabControl";
             this.SetupForm_TabControl.SelectedIndex = 0;
@@ -80,19 +80,19 @@
             this.deviceManageTab.Text = "Device Mangement";
             this.deviceManageTab.UseVisualStyleBackColor = true;
             // 
-            // reportsTab
+            // tablesTab
             // 
-            this.reportsTab.Controls.Add(this.button1);
-            this.reportsTab.Controls.Add(this.removeTableButton);
-            this.reportsTab.Controls.Add(this.tablesLabel);
-            this.reportsTab.Controls.Add(this.tablesListBox);
-            this.reportsTab.Controls.Add(this.addTableButton);
-            this.reportsTab.Location = new System.Drawing.Point(4, 22);
-            this.reportsTab.Name = "reportsTab";
-            this.reportsTab.Size = new System.Drawing.Size(768, 327);
-            this.reportsTab.TabIndex = 1;
-            this.reportsTab.Text = "Reports";
-            this.reportsTab.UseVisualStyleBackColor = true;
+            this.tablesTab.Controls.Add(this.button1);
+            this.tablesTab.Controls.Add(this.removeTableButton);
+            this.tablesTab.Controls.Add(this.tablesLabel);
+            this.tablesTab.Controls.Add(this.tablesListBox);
+            this.tablesTab.Controls.Add(this.addTableButton);
+            this.tablesTab.Location = new System.Drawing.Point(4, 22);
+            this.tablesTab.Name = "tablesTab";
+            this.tablesTab.Size = new System.Drawing.Size(768, 327);
+            this.tablesTab.TabIndex = 1;
+            this.tablesTab.Text = "Tables";
+            this.tablesTab.UseVisualStyleBackColor = true;
             // 
             // ioLabel
             // 
@@ -211,7 +211,7 @@
             // 
             // addTableButton
             // 
-            this.addTableButton.Location = new System.Drawing.Point(435, 284);
+            this.addTableButton.Location = new System.Drawing.Point(25, 157);
             this.addTableButton.Name = "addTableButton";
             this.addTableButton.Size = new System.Drawing.Size(100, 25);
             this.addTableButton.TabIndex = 0;
@@ -243,7 +243,7 @@
             // 
             // removeTableButton
             // 
-            this.removeTableButton.Location = new System.Drawing.Point(647, 284);
+            this.removeTableButton.Location = new System.Drawing.Point(139, 188);
             this.removeTableButton.Name = "removeTableButton";
             this.removeTableButton.Size = new System.Drawing.Size(100, 25);
             this.removeTableButton.TabIndex = 3;
@@ -252,7 +252,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(541, 284);
+            this.button1.Location = new System.Drawing.Point(139, 157);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 25);
             this.button1.TabIndex = 4;
@@ -272,8 +272,8 @@
             this.SetupForm_TabControl.ResumeLayout(false);
             this.deviceManageTab.ResumeLayout(false);
             this.deviceManageTab.PerformLayout();
-            this.reportsTab.ResumeLayout(false);
-            this.reportsTab.PerformLayout();
+            this.tablesTab.ResumeLayout(false);
+            this.tablesTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -283,7 +283,7 @@
         private System.Windows.Forms.TabControl SetupForm_TabControl;
         private System.Windows.Forms.TabPage deviceManageTab;
         private System.Windows.Forms.Label ioLabel;
-        private System.Windows.Forms.TabPage reportsTab;
+        private System.Windows.Forms.TabPage tablesTab;
         private System.Windows.Forms.ComboBox deviceComboBox;
         private System.Windows.Forms.Label varNameLabel;
         private System.Windows.Forms.TextBox variableTextBox;
