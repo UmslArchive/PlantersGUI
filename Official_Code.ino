@@ -8,7 +8,7 @@ int soilPin = A1;                                 //Declare a variable for the s
 int soilPower = 7;                                //Variable for Soil moisture Power.
 
 int watertime = 5;                                //How long to water in seconds.
-int waittime = 1;                                //How long to wait between watering in minutes.
+int waittime = 1;                                 //How long to wait between watering in minutes.
 
 int sensorValue = 0;                              //Value for storing moisture value.
 int moistureLevelHolder = 0;                      //Value hold for calculation.
@@ -53,9 +53,19 @@ void loop()
   //Open the file. note that only one file can be open at a time,
   //So you have to close this one before opening another.
 
-  File dataFile;
-
-  fileHandler(dataFile);
+  File dataFile = SD.open("datalog.txt", FILE_WRITE);
+  
+  //If the file is available, write to it.
+  if(dataFile)                                  //Output to datalog.txt.
+  {
+    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog);
+    dataFile.println();
+    dataFile.close();
+  }
+  else 
+  {
+    Serial.println("error opening datalog.txt");  //If the file isn't open, pop up an error.
+  }
 
   //This three second timefrme is used so you can test the sensor and see it change in real-time.
   //For in-plant applications, you will want to take readings much less frequently.
@@ -78,23 +88,6 @@ void loop()
     delay(waittime * 1000);                     //Multiply by 60000 to translate minutes to milliseconds.
 
     Serial.print("Pumping stopped \n");
-  }
-}
-
-void fileHandler(File dataFile)
-{
-  File dataFile = SD.open("datalog.txt", FILE_WRITE);
-  
-  //If the file is available, write to it.
-  if(dataFile)                                  //Output to datalog.txt.
-  {
-    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog);
-    dataFile.println();
-    dataFile.close();
-  }
-  else 
-  {
-    Serial.println("error opening datalog.txt");  //If the file isn't open, pop up an error.
   }
 }
 
