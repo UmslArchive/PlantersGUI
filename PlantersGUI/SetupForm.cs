@@ -36,5 +36,10 @@ namespace PlantersGUI
         {
 
         }
+
+        private void InequalityComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

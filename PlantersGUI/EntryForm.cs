@@ -1,45 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlantersGUI
 {
     public partial class EntryForm : Form
     {
+        //This declaration follows the heirarchical tree model of the project forms. (in the readme)
+        SetupForm setupForm = new SetupForm();
+        ContinueForm continueForm = new ContinueForm();
+
         public EntryForm()
         {
             InitializeComponent();
         }
 
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EntrySetupButton_Click(object sender, EventArgs e)
         {
-
+            //Switch from "EntryForm" to "SetupForm".
+            this.Visible = false;
+            setupForm.Visible = true;
         }
 
         private void EntryContinueButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
+            this.Visible = false;
+            continueForm.Visible = true;
         }
     }
 }

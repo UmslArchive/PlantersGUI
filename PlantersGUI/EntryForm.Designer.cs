@@ -28,42 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.EntrySetupButton = new System.Windows.Forms.Button();
-            this.EntryContinueButton = new System.Windows.Forms.Button();
+            this.programNameLabel = new System.Windows.Forms.Label();
+            this.setupButton = new System.Windows.Forms.Button();
+            this.continueButton = new System.Windows.Forms.Button();
             this.advancedSetupButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // programNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(453, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PLANT EXPERIMENT";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.programNameLabel.AutoSize = true;
+            this.programNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.programNameLabel.Location = new System.Drawing.Point(162, 73);
+            this.programNameLabel.Name = "programNameLabel";
+            this.programNameLabel.Size = new System.Drawing.Size(453, 51);
+            this.programNameLabel.TabIndex = 0;
+            this.programNameLabel.Text = "PLANT EXPERIMENT";
             // 
-            // EntrySetupButton
+            // setupButton
             // 
-            this.EntrySetupButton.Location = new System.Drawing.Point(288, 209);
-            this.EntrySetupButton.Name = "EntrySetupButton";
-            this.EntrySetupButton.Size = new System.Drawing.Size(75, 23);
-            this.EntrySetupButton.TabIndex = 1;
-            this.EntrySetupButton.Text = "Setup...";
-            this.EntrySetupButton.UseVisualStyleBackColor = true;
-            this.EntrySetupButton.Click += new System.EventHandler(this.EntrySetupButton_Click);
+            this.setupButton.Location = new System.Drawing.Point(288, 209);
+            this.setupButton.Name = "setupButton";
+            this.setupButton.Size = new System.Drawing.Size(75, 23);
+            this.setupButton.TabIndex = 1;
+            this.setupButton.Text = "Setup...";
+            this.setupButton.UseVisualStyleBackColor = true;
+            this.setupButton.Click += new System.EventHandler(this.EntrySetupButton_Click);
             // 
-            // EntryContinueButton
+            // continueButton
             // 
-            this.EntryContinueButton.Location = new System.Drawing.Point(288, 238);
-            this.EntryContinueButton.Name = "EntryContinueButton";
-            this.EntryContinueButton.Size = new System.Drawing.Size(191, 23);
-            this.EntryContinueButton.TabIndex = 2;
-            this.EntryContinueButton.Text = "Continue";
-            this.EntryContinueButton.UseVisualStyleBackColor = true;
-            this.EntryContinueButton.Click += new System.EventHandler(this.EntryContinueButton_Click);
+            this.continueButton.Location = new System.Drawing.Point(288, 238);
+            this.continueButton.Name = "continueButton";
+            this.continueButton.Size = new System.Drawing.Size(191, 23);
+            this.continueButton.TabIndex = 2;
+            this.continueButton.Text = "Continue";
+            this.continueButton.UseVisualStyleBackColor = true;
+            this.continueButton.Click += new System.EventHandler(this.EntryContinueButton_Click);
             // 
             // advancedSetupButton
             // 
@@ -80,9 +79,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.advancedSetupButton);
-            this.Controls.Add(this.EntryContinueButton);
-            this.Controls.Add(this.EntrySetupButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.continueButton);
+            this.Controls.Add(this.setupButton);
+            this.Controls.Add(this.programNameLabel);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "EntryForm";
             this.Text = "Planters";
@@ -93,9 +92,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button EntrySetupButton;
-        private System.Windows.Forms.Button EntryContinueButton;
+        private System.Windows.Forms.Label programNameLabel;
+        private System.Windows.Forms.Button setupButton;
+        private System.Windows.Forms.Button continueButton;
         private System.Windows.Forms.Button advancedSetupButton;
     }
 }

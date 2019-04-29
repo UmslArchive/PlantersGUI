@@ -59,7 +59,7 @@
             this.SetupForm_TabControl.Location = new System.Drawing.Point(12, 12);
             this.SetupForm_TabControl.Name = "SetupForm_TabControl";
             this.SetupForm_TabControl.SelectedIndex = 0;
-            this.SetupForm_TabControl.Size = new System.Drawing.Size(776, 353);
+            this.SetupForm_TabControl.Size = new System.Drawing.Size(499, 353);
             this.SetupForm_TabControl.TabIndex = 0;
             // 
             // deviceManageTab
@@ -75,7 +75,7 @@
             this.deviceManageTab.Controls.Add(this.ioLabel);
             this.deviceManageTab.Location = new System.Drawing.Point(4, 22);
             this.deviceManageTab.Name = "deviceManageTab";
-            this.deviceManageTab.Size = new System.Drawing.Size(768, 327);
+            this.deviceManageTab.Size = new System.Drawing.Size(491, 327);
             this.deviceManageTab.TabIndex = 0;
             this.deviceManageTab.Text = "Device Mangement";
             this.deviceManageTab.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.tablesTab.Controls.Add(this.addTableButton);
             this.tablesTab.Location = new System.Drawing.Point(4, 22);
             this.tablesTab.Name = "tablesTab";
-            this.tablesTab.Size = new System.Drawing.Size(768, 327);
+            this.tablesTab.Size = new System.Drawing.Size(491, 327);
             this.tablesTab.TabIndex = 1;
             this.tablesTab.Text = "Tables";
             this.tablesTab.UseVisualStyleBackColor = true;
@@ -161,6 +161,7 @@
             this.inequalityComboBox.Name = "inequalityComboBox";
             this.inequalityComboBox.Size = new System.Drawing.Size(48, 21);
             this.inequalityComboBox.TabIndex = 5;
+            this.inequalityComboBox.SelectedIndexChanged += new System.EventHandler(this.InequalityComboBox_SelectedIndexChanged);
             // 
             // valueTextBox
             // 
@@ -192,7 +193,7 @@
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(713, 374);
+            this.startButton.Location = new System.Drawing.Point(432, 374);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 64);
             this.startButton.TabIndex = 1;
@@ -211,7 +212,7 @@
             // 
             // addTableButton
             // 
-            this.addTableButton.Location = new System.Drawing.Point(25, 157);
+            this.addTableButton.Location = new System.Drawing.Point(82, 193);
             this.addTableButton.Name = "addTableButton";
             this.addTableButton.Size = new System.Drawing.Size(100, 25);
             this.addTableButton.TabIndex = 0;
@@ -225,9 +226,9 @@
             this.tablesListBox.FormattingEnabled = true;
             this.tablesListBox.Items.AddRange(new object[] {
             "Add a table..."});
-            this.tablesListBox.Location = new System.Drawing.Point(25, 30);
+            this.tablesListBox.Location = new System.Drawing.Point(82, 66);
             this.tablesListBox.Name = "tablesListBox";
-            this.tablesListBox.Size = new System.Drawing.Size(214, 121);
+            this.tablesListBox.Size = new System.Drawing.Size(279, 121);
             this.tablesListBox.TabIndex = 1;
             this.tablesListBox.SelectedIndexChanged += new System.EventHandler(this.TablesListBox_SelectedIndexChanged);
             // 
@@ -235,7 +236,7 @@
             // 
             this.tablesLabel.AutoSize = true;
             this.tablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablesLabel.Location = new System.Drawing.Point(22, 14);
+            this.tablesLabel.Location = new System.Drawing.Point(79, 50);
             this.tablesLabel.Name = "tablesLabel";
             this.tablesLabel.Size = new System.Drawing.Size(49, 13);
             this.tablesLabel.TabIndex = 2;
@@ -243,7 +244,7 @@
             // 
             // removeTableButton
             // 
-            this.removeTableButton.Location = new System.Drawing.Point(139, 188);
+            this.removeTableButton.Location = new System.Drawing.Point(261, 224);
             this.removeTableButton.Name = "removeTableButton";
             this.removeTableButton.Size = new System.Drawing.Size(100, 25);
             this.removeTableButton.TabIndex = 3;
@@ -252,7 +253,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 157);
+            this.button1.Location = new System.Drawing.Point(261, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 25);
             this.button1.TabIndex = 4;
@@ -263,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(528, 450);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.SetupForm_TabControl);

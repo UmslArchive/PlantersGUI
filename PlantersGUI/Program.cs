@@ -16,9 +16,7 @@ namespace PlantersGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new EntryForm());
-            //Application.Run(new SetupForm());
-            Application.Run(new TableConfigForm());
+            Application.Run(new EntryForm());
         }
     }
 }
