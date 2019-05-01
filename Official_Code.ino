@@ -8,7 +8,7 @@ int soilPin = A1;                                 //Declare a variable for the s
 int soilPower = 7;                                //Variable for Soil moisture Power pin.
 
 int watertime = 30;                               //How long to water in seconds (100mL/minute).
-int waittime = 1;                                 //How long to wait between watering in minutes.
+int waittime = 1;                                 //How long to wait between watering in intervals (3 second wait time from reading).
 
 int sensorValue = 0;                              //Value for storing moisture value.
 int moistureLevelHolder = 0;                      //Value hold for calculation.
