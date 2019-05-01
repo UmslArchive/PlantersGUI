@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PlantersGUI
 {
-    public partial class EntryForm : Form
+    public partial class TableConfigForm : Form
     {
-        public EntryForm()
+        public TableConfigForm()
         {
             InitializeComponent();
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
