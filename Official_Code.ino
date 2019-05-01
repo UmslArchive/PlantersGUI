@@ -5,6 +5,7 @@ const int chipSelect = 4;                         //Selected pin for SD card rea
 int motorPin = A0;                                //Pin that turns on the motor.
 int blinkPin = 13;                                //Pin that turns on the LED.
 int soilPin = A1;                                 //Declare a variable for the soil moisture sensor.
+
 int soilPower = 7;                                //Variable for Soil moisture Power.
 
 int watertime = 5;                                //How long to water in seconds.
@@ -29,8 +30,6 @@ void setup()
   
   if (!SD.begin(chipSelect))                      //Error handling for SD card.
   {
-    Serial.println("Card failed, or not present");
-    // don't do anything more.
     while (1);
   }
   Serial.println("card initialized.");
