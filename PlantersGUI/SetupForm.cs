@@ -12,34 +12,41 @@ namespace PlantersGUI
 {
     public partial class SetupForm : Form
     {
+        //Declare forms which are possible to navigate from "SetupForm">
+        public static EntryForm entryForm = new EntryForm();
+        public static ContinueForm continueForm = new ContinueForm();
+        public static TableConfigForm tableConfigForm = new TableConfigForm();
+
         public SetupForm()
         {
             InitializeComponent();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
+            //Switch to "EntryForm".
+            this.Visible = false;
+            entryForm.Show();
 
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
-
+            //Switch to "ContinueForm".
+            this.Visible = false;
+            continueForm.Show();
         }
 
-        private void Label1_Click_1(object sender, EventArgs e)
+        private void AddTableButton_Click(object sender, EventArgs e)
         {
-
+            //Show "TableConfigForm" as dialog window.
+            tableConfigForm.ShowDialog();
         }
 
-        private void TablesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void InequalityComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            //Show "TableConfigForm" as dialog window.
+            tableConfigForm.ShowDialog();
         }
     }
 }

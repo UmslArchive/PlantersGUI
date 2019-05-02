@@ -30,23 +30,23 @@
         {
             this.SetupForm_TabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
-            this.tablesTab = new System.Windows.Forms.TabPage();
-            this.ioLabel = new System.Windows.Forms.Label();
-            this.deviceComboBox = new System.Windows.Forms.ComboBox();
-            this.varNameLabel = new System.Windows.Forms.Label();
-            this.variableTextBox = new System.Windows.Forms.TextBox();
-            this.constraintLabel = new System.Windows.Forms.Label();
-            this.inequalityComboBox = new System.Windows.Forms.ComboBox();
-            this.valueTextBox = new System.Windows.Forms.TextBox();
-            this.addDeviceButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
+            this.addDeviceButton = new System.Windows.Forms.Button();
+            this.valueTextBox = new System.Windows.Forms.TextBox();
+            this.inequalityComboBox = new System.Windows.Forms.ComboBox();
+            this.constraintLabel = new System.Windows.Forms.Label();
+            this.variableTextBox = new System.Windows.Forms.TextBox();
+            this.varNameLabel = new System.Windows.Forms.Label();
+            this.deviceComboBox = new System.Windows.Forms.ComboBox();
+            this.ioLabel = new System.Windows.Forms.Label();
+            this.tablesTab = new System.Windows.Forms.TabPage();
+            this.editButton = new System.Windows.Forms.Button();
+            this.removeTableButton = new System.Windows.Forms.Button();
+            this.tablesLabel = new System.Windows.Forms.Label();
+            this.tablesListBox = new System.Windows.Forms.ListBox();
+            this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.addTableButton = new System.Windows.Forms.Button();
-            this.tablesListBox = new System.Windows.Forms.ListBox();
-            this.tablesLabel = new System.Windows.Forms.Label();
-            this.removeTableButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SetupForm_TabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
             this.tablesTab.SuspendLayout();
@@ -80,73 +80,32 @@
             this.deviceManageTab.Text = "Device Mangement";
             this.deviceManageTab.UseVisualStyleBackColor = true;
             // 
-            // tablesTab
+            // applyButton
             // 
-            this.tablesTab.Controls.Add(this.button1);
-            this.tablesTab.Controls.Add(this.removeTableButton);
-            this.tablesTab.Controls.Add(this.tablesLabel);
-            this.tablesTab.Controls.Add(this.tablesListBox);
-            this.tablesTab.Controls.Add(this.addTableButton);
-            this.tablesTab.Location = new System.Drawing.Point(4, 22);
-            this.tablesTab.Name = "tablesTab";
-            this.tablesTab.Size = new System.Drawing.Size(491, 327);
-            this.tablesTab.TabIndex = 1;
-            this.tablesTab.Text = "Tables";
-            this.tablesTab.UseVisualStyleBackColor = true;
+            this.applyButton.Location = new System.Drawing.Point(690, 301);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.TabIndex = 8;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
             // 
-            // ioLabel
+            // addDeviceButton
             // 
-            this.ioLabel.AutoSize = true;
-            this.ioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ioLabel.Location = new System.Drawing.Point(41, 21);
-            this.ioLabel.Name = "ioLabel";
-            this.ioLabel.Size = new System.Drawing.Size(74, 13);
-            this.ioLabel.TabIndex = 0;
-            this.ioLabel.Text = "I/O Device:";
-            this.ioLabel.Click += new System.EventHandler(this.Label1_Click);
+            this.addDeviceButton.Location = new System.Drawing.Point(371, 83);
+            this.addDeviceButton.Name = "addDeviceButton";
+            this.addDeviceButton.Size = new System.Drawing.Size(75, 23);
+            this.addDeviceButton.TabIndex = 7;
+            this.addDeviceButton.Text = "Add Device";
+            this.addDeviceButton.UseVisualStyleBackColor = true;
             // 
-            // deviceComboBox
+            // valueTextBox
             // 
-            this.deviceComboBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.deviceComboBox.FormattingEnabled = true;
-            this.deviceComboBox.Location = new System.Drawing.Point(44, 38);
-            this.deviceComboBox.Name = "deviceComboBox";
-            this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
-            this.deviceComboBox.TabIndex = 1;
-            this.deviceComboBox.Text = "Select Device...";
-            this.deviceComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-            // 
-            // varNameLabel
-            // 
-            this.varNameLabel.AutoSize = true;
-            this.varNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.varNameLabel.Location = new System.Drawing.Point(172, 21);
-            this.varNameLabel.Name = "varNameLabel";
-            this.varNameLabel.Size = new System.Drawing.Size(93, 13);
-            this.varNameLabel.TabIndex = 2;
-            this.varNameLabel.Text = "Variable Name:";
-            this.varNameLabel.Click += new System.EventHandler(this.Label1_Click_1);
-            // 
-            // variableTextBox
-            // 
-            this.variableTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.variableTextBox.Location = new System.Drawing.Point(175, 38);
-            this.variableTextBox.MaxLength = 36;
-            this.variableTextBox.Name = "variableTextBox";
-            this.variableTextBox.Size = new System.Drawing.Size(128, 20);
-            this.variableTextBox.TabIndex = 3;
-            this.variableTextBox.Text = "Control Variable Name...";
-            this.variableTextBox.WordWrap = false;
-            // 
-            // constraintLabel
-            // 
-            this.constraintLabel.AutoSize = true;
-            this.constraintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.constraintLabel.Location = new System.Drawing.Point(310, 21);
-            this.constraintLabel.Name = "constraintLabel";
-            this.constraintLabel.Size = new System.Drawing.Size(68, 13);
-            this.constraintLabel.TabIndex = 4;
-            this.constraintLabel.Text = "Constraint:";
+            this.valueTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.valueTextBox.Location = new System.Drawing.Point(368, 37);
+            this.valueTextBox.Name = "valueTextBox";
+            this.valueTextBox.Size = new System.Drawing.Size(78, 20);
+            this.valueTextBox.TabIndex = 6;
+            this.valueTextBox.Text = "Enter Value...";
             // 
             // inequalityComboBox
             // 
@@ -161,63 +120,100 @@
             this.inequalityComboBox.Name = "inequalityComboBox";
             this.inequalityComboBox.Size = new System.Drawing.Size(48, 21);
             this.inequalityComboBox.TabIndex = 5;
-            this.inequalityComboBox.SelectedIndexChanged += new System.EventHandler(this.InequalityComboBox_SelectedIndexChanged);
             // 
-            // valueTextBox
+            // constraintLabel
             // 
-            this.valueTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.valueTextBox.Location = new System.Drawing.Point(368, 37);
-            this.valueTextBox.Name = "valueTextBox";
-            this.valueTextBox.Size = new System.Drawing.Size(78, 20);
-            this.valueTextBox.TabIndex = 6;
-            this.valueTextBox.Text = "Enter Value...";
+            this.constraintLabel.AutoSize = true;
+            this.constraintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.constraintLabel.Location = new System.Drawing.Point(310, 21);
+            this.constraintLabel.Name = "constraintLabel";
+            this.constraintLabel.Size = new System.Drawing.Size(68, 13);
+            this.constraintLabel.TabIndex = 4;
+            this.constraintLabel.Text = "Constraint:";
             // 
-            // addDeviceButton
+            // variableTextBox
             // 
-            this.addDeviceButton.Location = new System.Drawing.Point(371, 83);
-            this.addDeviceButton.Name = "addDeviceButton";
-            this.addDeviceButton.Size = new System.Drawing.Size(75, 23);
-            this.addDeviceButton.TabIndex = 7;
-            this.addDeviceButton.Text = "Add Device";
-            this.addDeviceButton.UseVisualStyleBackColor = true;
+            this.variableTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.variableTextBox.Location = new System.Drawing.Point(175, 38);
+            this.variableTextBox.MaxLength = 36;
+            this.variableTextBox.Name = "variableTextBox";
+            this.variableTextBox.Size = new System.Drawing.Size(128, 20);
+            this.variableTextBox.TabIndex = 3;
+            this.variableTextBox.Text = "Control Variable Name...";
+            this.variableTextBox.WordWrap = false;
             // 
-            // applyButton
+            // varNameLabel
             // 
-            this.applyButton.Location = new System.Drawing.Point(690, 301);
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 8;
-            this.applyButton.Text = "Apply";
-            this.applyButton.UseVisualStyleBackColor = true;
+            this.varNameLabel.AutoSize = true;
+            this.varNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.varNameLabel.Location = new System.Drawing.Point(172, 21);
+            this.varNameLabel.Name = "varNameLabel";
+            this.varNameLabel.Size = new System.Drawing.Size(93, 13);
+            this.varNameLabel.TabIndex = 2;
+            this.varNameLabel.Text = "Variable Name:";
             // 
-            // startButton
+            // deviceComboBox
             // 
-            this.startButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(432, 374);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(75, 64);
-            this.startButton.TabIndex = 1;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
+            this.deviceComboBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.deviceComboBox.FormattingEnabled = true;
+            this.deviceComboBox.Location = new System.Drawing.Point(44, 38);
+            this.deviceComboBox.Name = "deviceComboBox";
+            this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.deviceComboBox.TabIndex = 1;
+            this.deviceComboBox.Text = "Select Device...";
             // 
-            // cancelButton
+            // ioLabel
             // 
-            this.cancelButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(16, 374);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 64);
-            this.cancelButton.TabIndex = 2;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.ioLabel.AutoSize = true;
+            this.ioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ioLabel.Location = new System.Drawing.Point(41, 21);
+            this.ioLabel.Name = "ioLabel";
+            this.ioLabel.Size = new System.Drawing.Size(74, 13);
+            this.ioLabel.TabIndex = 0;
+            this.ioLabel.Text = "I/O Device:";
             // 
-            // addTableButton
+            // tablesTab
             // 
-            this.addTableButton.Location = new System.Drawing.Point(82, 193);
-            this.addTableButton.Name = "addTableButton";
-            this.addTableButton.Size = new System.Drawing.Size(100, 25);
-            this.addTableButton.TabIndex = 0;
-            this.addTableButton.Text = "Add";
-            this.addTableButton.UseVisualStyleBackColor = true;
+            this.tablesTab.Controls.Add(this.editButton);
+            this.tablesTab.Controls.Add(this.removeTableButton);
+            this.tablesTab.Controls.Add(this.tablesLabel);
+            this.tablesTab.Controls.Add(this.tablesListBox);
+            this.tablesTab.Controls.Add(this.addTableButton);
+            this.tablesTab.Location = new System.Drawing.Point(4, 22);
+            this.tablesTab.Name = "tablesTab";
+            this.tablesTab.Size = new System.Drawing.Size(491, 327);
+            this.tablesTab.TabIndex = 1;
+            this.tablesTab.Text = "Tables";
+            this.tablesTab.UseVisualStyleBackColor = true;
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(261, 193);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(100, 25);
+            this.editButton.TabIndex = 4;
+            this.editButton.Text = "Edit...";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // removeTableButton
+            // 
+            this.removeTableButton.Location = new System.Drawing.Point(261, 224);
+            this.removeTableButton.Name = "removeTableButton";
+            this.removeTableButton.Size = new System.Drawing.Size(100, 25);
+            this.removeTableButton.TabIndex = 3;
+            this.removeTableButton.Text = "Remove";
+            this.removeTableButton.UseVisualStyleBackColor = true;
+            // 
+            // tablesLabel
+            // 
+            this.tablesLabel.AutoSize = true;
+            this.tablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablesLabel.Location = new System.Drawing.Point(79, 50);
+            this.tablesLabel.Name = "tablesLabel";
+            this.tablesLabel.Size = new System.Drawing.Size(49, 13);
+            this.tablesLabel.TabIndex = 2;
+            this.tablesLabel.Text = "Tables:";
             // 
             // tablesListBox
             // 
@@ -230,35 +226,38 @@
             this.tablesListBox.Name = "tablesListBox";
             this.tablesListBox.Size = new System.Drawing.Size(279, 121);
             this.tablesListBox.TabIndex = 1;
-            this.tablesListBox.SelectedIndexChanged += new System.EventHandler(this.TablesListBox_SelectedIndexChanged);
             // 
-            // tablesLabel
+            // addTableButton
             // 
-            this.tablesLabel.AutoSize = true;
-            this.tablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablesLabel.Location = new System.Drawing.Point(79, 50);
-            this.tablesLabel.Name = "tablesLabel";
-            this.tablesLabel.Size = new System.Drawing.Size(49, 13);
-            this.tablesLabel.TabIndex = 2;
-            this.tablesLabel.Text = "Tables:";
+            this.addTableButton.Location = new System.Drawing.Point(82, 193);
+            this.addTableButton.Name = "addTableButton";
+            this.addTableButton.Size = new System.Drawing.Size(100, 25);
+            this.addTableButton.TabIndex = 0;
+            this.addTableButton.Text = "Add";
+            this.addTableButton.UseVisualStyleBackColor = true;
+            this.addTableButton.Click += new System.EventHandler(this.AddTableButton_Click);
             // 
-            // removeTableButton
+            // startButton
             // 
-            this.removeTableButton.Location = new System.Drawing.Point(261, 224);
-            this.removeTableButton.Name = "removeTableButton";
-            this.removeTableButton.Size = new System.Drawing.Size(100, 25);
-            this.removeTableButton.TabIndex = 3;
-            this.removeTableButton.Text = "Remove";
-            this.removeTableButton.UseVisualStyleBackColor = true;
+            this.startButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(432, 374);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 64);
+            this.startButton.TabIndex = 1;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
-            // button1
+            // cancelButton
             // 
-            this.button1.Location = new System.Drawing.Point(261, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 25);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Edit...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cancelButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(16, 374);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 64);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // SetupForm
             // 
@@ -299,6 +298,6 @@
         private System.Windows.Forms.ListBox tablesListBox;
         private System.Windows.Forms.Button addTableButton;
         private System.Windows.Forms.Button removeTableButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editButton;
     }
 }
