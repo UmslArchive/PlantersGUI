@@ -12,6 +12,9 @@ namespace PlantersGUI
         public EntryForm()
         {
             InitializeComponent();
+
+            //Initialize experiment.
+            Program.exp = new Experiment();
         }
 
         private void EntrySetupButton_Click(object sender, EventArgs e)
