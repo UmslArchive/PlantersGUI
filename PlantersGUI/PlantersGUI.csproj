@@ -74,6 +74,7 @@
     <Compile Include="EntryForm.Designer.cs">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Experiment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetupForm.cs">
