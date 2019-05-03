@@ -19,6 +19,8 @@ namespace PlantersGUI
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
+            //Create a new table with user input as parameters and add it to the list of tables contained in exp.
+            Program.exp.tables.Add(new Table(titleTextBox.Text, indepVarComboBox.Text, depVarComboBox.Text, dffNumericUpDown.Value));
             this.Close();
         }
 

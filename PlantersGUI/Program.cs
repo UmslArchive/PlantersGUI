@@ -11,6 +11,9 @@ namespace PlantersGUI
         //Root form declaration.
         public static EntryForm entryForm;
 
+        //Declare Experiment object.
+        public static Experiment exp;
+
         //Program initialization.
         static Program()
         {

@@ -1,20 +1,27 @@
-﻿namespace PlantersGUI
+﻿using System;
+using System.Collections.Generic;
+
+namespace PlantersGUI
 {
-    public static class Experiment
+    public class Experiment
     {
         //Data.
-        public static Device[] devices;
-        public static Table[] tables;
+        public List<Device> devices;
+        public List<Table> tables;
 
         //Experiment initialization
-        static Experiment()
+        public Experiment()
         {
+            //Initialize lists.
+            devices = new List<Device>();
+            tables = new List<Table>();
 
         }
          
         //Save currently open experiment to file.
-        static void save()
+        public void save()
         {
+
         }
     }
 }
