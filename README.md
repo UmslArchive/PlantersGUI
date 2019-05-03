@@ -1,3 +1,3 @@
 # PlantersGUI
 
-## Checkout the wiki.
+## Check out the wiki. :)
