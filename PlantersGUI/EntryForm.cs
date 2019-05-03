@@ -5,9 +5,9 @@ namespace PlantersGUI
 {
     public partial class EntryForm : Form
     {
-        //This declaration follows the heirarchical tree model of the project forms. (in the readme)
-        SetupForm setupForm = new SetupForm();
-        ContinueForm continueForm = new ContinueForm();
+        //Declare forms which can be navigated to from "EntryForm".
+        public static SetupForm setupForm = new SetupForm();
+        public static ContinueForm continueForm = new ContinueForm();
 
         public EntryForm()
         {
@@ -16,13 +16,14 @@ namespace PlantersGUI
 
         private void EntrySetupButton_Click(object sender, EventArgs e)
         {
-            //Switch from "EntryForm" to "SetupForm".
+            //Switch to "SetupForm".
             this.Visible = false;
             setupForm.Visible = true;
         }
 
         private void EntryContinueButton_Click(object sender, EventArgs e)
         {
+            //Switch to "ContinueForm".
             this.Visible = false;
             continueForm.Visible = true;
         }

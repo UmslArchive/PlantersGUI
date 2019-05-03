@@ -16,5 +16,15 @@ namespace PlantersGUI
         {
             InitializeComponent();
         }
+
+        private void AcceptButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

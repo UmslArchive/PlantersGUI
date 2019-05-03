@@ -68,6 +68,7 @@
             this.acceptButton.TabIndex = 2;
             this.acceptButton.Text = "Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
             // cancelButton
             // 
@@ -77,6 +78,7 @@
             this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // depVarLabel
             // 
