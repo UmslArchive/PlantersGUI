@@ -34,8 +34,8 @@
             this.addReportButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.deviceMonitorGroupBox = new System.Windows.Forms.GroupBox();
-            this.deviceLabel = new System.Windows.Forms.Label();
             this.deviceStatusLabel = new System.Windows.Forms.Label();
+            this.deviceLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.reportsComboBox = new System.Windows.Forms.ComboBox();
             this.reportsLabel = new System.Windows.Forms.Label();
@@ -113,16 +113,6 @@
             this.deviceMonitorGroupBox.Text = "Devices Monitor";
             this.deviceMonitorGroupBox.Enter += new System.EventHandler(this.DeviceMonitorGroupBox_Enter);
             // 
-            // deviceLabel
-            // 
-            this.deviceLabel.AutoSize = true;
-            this.deviceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deviceLabel.Location = new System.Drawing.Point(7, 20);
-            this.deviceLabel.Name = "deviceLabel";
-            this.deviceLabel.Size = new System.Drawing.Size(47, 13);
-            this.deviceLabel.TabIndex = 0;
-            this.deviceLabel.Text = "Device";
-            // 
             // deviceStatusLabel
             // 
             this.deviceStatusLabel.AutoSize = true;
@@ -133,6 +123,16 @@
             this.deviceStatusLabel.TabIndex = 1;
             this.deviceStatusLabel.Text = "Status";
             // 
+            // deviceLabel
+            // 
+            this.deviceLabel.AutoSize = true;
+            this.deviceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deviceLabel.Location = new System.Drawing.Point(7, 20);
+            this.deviceLabel.Name = "deviceLabel";
+            this.deviceLabel.Size = new System.Drawing.Size(47, 13);
+            this.deviceLabel.TabIndex = 0;
+            this.deviceLabel.Text = "Device";
+            // 
             // exitButton
             // 
             this.exitButton.Location = new System.Drawing.Point(688, 383);
@@ -141,6 +141,7 @@
             this.exitButton.TabIndex = 8;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // reportsComboBox
             // 
