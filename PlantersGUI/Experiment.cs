@@ -2,6 +2,8 @@
 {
     public static class Experiment
     {
+        //Data.
+        public static Device[] devices;
         public static Table[] tables;
 
         //Experiment initialization
