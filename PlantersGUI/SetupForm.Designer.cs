@@ -204,6 +204,7 @@
             this.removeTableButton.TabIndex = 3;
             this.removeTableButton.Text = "Remove";
             this.removeTableButton.UseVisualStyleBackColor = true;
+            this.removeTableButton.Click += new System.EventHandler(this.RemoveTableButton_Click);
             // 
             // tablesLabel
             // 
