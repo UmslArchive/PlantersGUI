@@ -25,7 +25,7 @@ namespace PlantersGUI
         private void CancelButton_Click(object sender, EventArgs e)
         {
             //Switch to "EntryForm".
-            this.Visible = false;
+            Close();
             entryForm.Show();
 
         }
@@ -33,7 +33,7 @@ namespace PlantersGUI
         private void StartButton_Click(object sender, EventArgs e)
         {
             //Switch to "ContinueForm".
-            this.Visible = false;
+            Close();
             continueForm.Show();
         }
 
