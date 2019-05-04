@@ -218,7 +218,7 @@
             // tablesListBox
             // 
             this.tablesListBox.BackColor = System.Drawing.SystemColors.Window;
-            this.tablesListBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tablesListBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablesListBox.FormattingEnabled = true;
             this.tablesListBox.Items.AddRange(new object[] {
             "Add a table..."});
@@ -269,6 +269,7 @@
             this.Controls.Add(this.SetupForm_TabControl);
             this.Name = "SetupForm";
             this.Text = "Setup Experiment";
+            this.Activated += new System.EventHandler(this.SetupForm_Activated);
             this.SetupForm_TabControl.ResumeLayout(false);
             this.deviceManageTab.ResumeLayout(false);
             this.deviceManageTab.PerformLayout();

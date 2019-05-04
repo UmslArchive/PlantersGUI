@@ -48,5 +48,16 @@ namespace PlantersGUI
             //Show "TableConfigForm" as dialog window.
             tableConfigForm.ShowDialog();
         }
+
+        //On form focus.
+        private void SetupForm_Activated(object sender, EventArgs e)
+        {
+            //Update tablesListBox of tables.
+            tablesListBox.Items.Clear();
+
+            //Add each table to the list of items.
+            foreach(Table table in Program.exp.tables)
+                tablesListBox.Items.Add(table.title);
+        }
     }
 }
