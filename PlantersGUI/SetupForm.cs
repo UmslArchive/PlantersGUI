@@ -49,10 +49,10 @@ namespace PlantersGUI
             tableConfigForm.ShowDialog();
         }
 
-        //On form focus.
+        //On form focus, refresh the table list.
         private void SetupForm_Activated(object sender, EventArgs e)
         {
-            //Update tablesListBox of tables.
+            //Clear the list of tables.
             tablesListBox.Items.Clear();
 
             //Add each table to the list of items.

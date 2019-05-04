@@ -29,7 +29,7 @@ namespace PlantersGUI
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            Close();
             Program.entryForm.Show();
         }
     }
