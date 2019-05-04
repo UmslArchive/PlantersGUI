@@ -28,5 +28,17 @@ namespace PlantersGUI
         {
             this.Close();
         }
+
+        //TODO
+        //Function resets all textboxes, etc.
+        private void resetForm()
+        {
+            titleTextBox.Clear();
+        }
+
+        private void TableConfigForm_Load(object sender, EventArgs e)
+        {
+            resetForm();
+        }
     }
 }

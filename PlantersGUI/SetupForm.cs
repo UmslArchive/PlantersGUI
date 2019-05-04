@@ -63,16 +63,12 @@ namespace PlantersGUI
         private void RemoveTableButton_Click(object sender, EventArgs e)
         {
             //Iterate through list of tables until a match with selected is found and remove from tables list.
-            if (tablesListBox.SelectedItem != null)
+            if (tablesListBox.SelectedItem != null) 
             {
                 int index = -1;
                 foreach (Table table in Program.exp.tables)
-                {
                     if (tablesListBox.SelectedItem.ToString() == table.title.ToString())
-                    {
                         index = Program.exp.tables.IndexOf(table);
-                    }
-                }
 
                 if (index > -1)
                     Program.exp.tables.RemoveAt(index);

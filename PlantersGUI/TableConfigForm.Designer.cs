@@ -182,6 +182,7 @@
             this.Name = "TableConfigForm";
             this.Text = "Table Configuration";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.TableConfigForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dffNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
