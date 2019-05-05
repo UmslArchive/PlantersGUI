@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
+            this.constraintCheckBox = new System.Windows.Forms.CheckBox();
             this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.applyButton = new System.Windows.Forms.Button();
             this.addVarButton = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.constraintCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).BeginInit();
@@ -81,12 +81,26 @@
             this.deviceManageTab.Text = "Device Mangement";
             this.deviceManageTab.UseVisualStyleBackColor = true;
             // 
+            // constraintCheckBox
+            // 
+            this.constraintCheckBox.AutoSize = true;
+            this.constraintCheckBox.Checked = true;
+            this.constraintCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.constraintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.constraintCheckBox.Location = new System.Drawing.Point(313, 17);
+            this.constraintCheckBox.Name = "constraintCheckBox";
+            this.constraintCheckBox.Size = new System.Drawing.Size(83, 17);
+            this.constraintCheckBox.TabIndex = 3;
+            this.constraintCheckBox.Text = "Constraint";
+            this.constraintCheckBox.UseVisualStyleBackColor = true;
+            this.constraintCheckBox.Click += new System.EventHandler(this.ConstraintCheckBox_Click);
+            // 
             // valueNumericUpDown
             // 
             this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
             this.valueNumericUpDown.Name = "valueNumericUpDown";
             this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
-            this.valueNumericUpDown.TabIndex = 9;
+            this.valueNumericUpDown.TabIndex = 5;
             // 
             // applyButton
             // 
@@ -102,7 +116,7 @@
             this.addVarButton.Location = new System.Drawing.Point(352, 83);
             this.addVarButton.Name = "addVarButton";
             this.addVarButton.Size = new System.Drawing.Size(94, 23);
-            this.addVarButton.TabIndex = 7;
+            this.addVarButton.TabIndex = 6;
             this.addVarButton.Text = "Add Variable";
             this.addVarButton.UseVisualStyleBackColor = true;
             this.addVarButton.Click += new System.EventHandler(this.AddDeviceButton_Click);
@@ -119,7 +133,7 @@
             this.inequalityComboBox.Location = new System.Drawing.Point(313, 37);
             this.inequalityComboBox.Name = "inequalityComboBox";
             this.inequalityComboBox.Size = new System.Drawing.Size(48, 21);
-            this.inequalityComboBox.TabIndex = 5;
+            this.inequalityComboBox.TabIndex = 4;
             // 
             // variableTextBox
             // 
@@ -128,9 +142,10 @@
             this.variableTextBox.MaxLength = 36;
             this.variableTextBox.Name = "variableTextBox";
             this.variableTextBox.Size = new System.Drawing.Size(128, 20);
-            this.variableTextBox.TabIndex = 3;
-            this.variableTextBox.Text = "Control Variable Name...";
+            this.variableTextBox.TabIndex = 1;
+            this.variableTextBox.Text = "Type Name...";
             this.variableTextBox.WordWrap = false;
+            this.variableTextBox.Click += new System.EventHandler(this.VariableTextBox_Click);
             // 
             // varNameLabel
             // 
@@ -138,12 +153,13 @@
             this.varNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.varNameLabel.Location = new System.Drawing.Point(28, 18);
             this.varNameLabel.Name = "varNameLabel";
-            this.varNameLabel.Size = new System.Drawing.Size(93, 13);
+            this.varNameLabel.Size = new System.Drawing.Size(83, 13);
             this.varNameLabel.TabIndex = 2;
-            this.varNameLabel.Text = "Variable Name:";
+            this.varNameLabel.Text = "User Variable";
             // 
             // deviceComboBox
             // 
+            this.deviceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deviceComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deviceComboBox.FormattingEnabled = true;
             this.deviceComboBox.Items.AddRange(new object[] {
@@ -151,8 +167,7 @@
             this.deviceComboBox.Location = new System.Drawing.Point(174, 37);
             this.deviceComboBox.Name = "deviceComboBox";
             this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
-            this.deviceComboBox.TabIndex = 1;
-            this.deviceComboBox.Text = "Select Device...";
+            this.deviceComboBox.TabIndex = 2;
             // 
             // ioLabel
             // 
@@ -160,9 +175,9 @@
             this.ioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ioLabel.Location = new System.Drawing.Point(171, 18);
             this.ioLabel.Name = "ioLabel";
-            this.ioLabel.Size = new System.Drawing.Size(74, 13);
+            this.ioLabel.Size = new System.Drawing.Size(70, 13);
             this.ioLabel.TabIndex = 0;
-            this.ioLabel.Text = "I/O Device:";
+            this.ioLabel.Text = "I/O Device";
             // 
             // tablesTab
             // 
@@ -236,7 +251,7 @@
             this.startButton.Location = new System.Drawing.Point(432, 374);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 64);
-            this.startButton.TabIndex = 1;
+            this.startButton.TabIndex = 7;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.StartButton_Click);
@@ -247,24 +262,10 @@
             this.cancelButton.Location = new System.Drawing.Point(16, 374);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 64);
-            this.cancelButton.TabIndex = 2;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // constraintCheckBox
-            // 
-            this.constraintCheckBox.AutoSize = true;
-            this.constraintCheckBox.Checked = true;
-            this.constraintCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.constraintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.constraintCheckBox.Location = new System.Drawing.Point(313, 17);
-            this.constraintCheckBox.Name = "constraintCheckBox";
-            this.constraintCheckBox.Size = new System.Drawing.Size(83, 17);
-            this.constraintCheckBox.TabIndex = 10;
-            this.constraintCheckBox.Text = "Constraint";
-            this.constraintCheckBox.UseVisualStyleBackColor = true;
-            this.constraintCheckBox.Click += new System.EventHandler(this.ConstraintCheckBox_Click);
             // 
             // SetupForm
             // 

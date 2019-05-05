@@ -86,21 +86,18 @@ namespace PlantersGUI
             bool isDuplicate = false;
             foreach(UserVariable uv in Program.exp.userVariables)
             {
-                if (uv.deviceID == deviceComboBox.Text)
+                if (uv.varName == variableTextBox.Text)
                     isDuplicate = true;
             }
 
             //Add variable if not a duplicate entry and user has modified text.
-            if(!isDuplicate && deviceComboBox.Text != "Select Device...")
+            if(!isDuplicate && variableTextBox.Text != "Type Name...")
             {
                 if(constraintCheckBox.Checked)
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
                 else
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
-            }              
-
-            //Clear the comboBox.
-            deviceComboBox.Items.Clear();
+            }                         
 
             //Add devices to the combobox.
             foreach (UserVariable uv in Program.exp.userVariables)
@@ -110,6 +107,9 @@ namespace PlantersGUI
         private void SetupForm_Load(object sender, EventArgs e)
         {
             //TODO: Populate deviceComboBox with devices. (arduino sensors)
+
+            //Set default selection.
+            deviceComboBox.Text = "No Device";
         }
 
         private void ConstraintCheckBox_Click(object sender, EventArgs e)
@@ -125,6 +125,11 @@ namespace PlantersGUI
                 inequalityComboBox.Enabled = true;
                 valueNumericUpDown.Enabled = true;
             }
+        }
+
+        private void VariableTextBox_Click(object sender, EventArgs e)
+        {
+            variableTextBox.SelectAll();
         }
     }
 }
