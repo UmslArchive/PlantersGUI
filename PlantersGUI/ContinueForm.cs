@@ -65,9 +65,15 @@ namespace PlantersGUI
 
 
                 //Add data to DataGrid.
+                //for each row in a table object add row with corresponding elements.
                 string[] headerRow =
                     {   Program.exp.tables[selectedTableIndex].indepVariable,
                     Program.exp.tables[selectedTableIndex].depVariable      };
+
+                for(int i = 0; i < 30; ++i)
+                {
+                    tablesDataGrid.Rows.Add();
+                }
             }
         }
 

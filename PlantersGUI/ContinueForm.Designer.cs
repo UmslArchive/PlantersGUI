@@ -37,8 +37,6 @@
             this.deviceLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.tableExportButton = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGrid)).BeginInit();
             this.deviceMonitorGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -48,9 +46,6 @@
             this.tablesDataGrid.AllowUserToAddRows = false;
             this.tablesDataGrid.AllowUserToDeleteRows = false;
             this.tablesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.tablesDataGrid.Location = new System.Drawing.Point(12, 54);
             this.tablesDataGrid.Name = "tablesDataGrid";
             this.tablesDataGrid.ReadOnly = true;
@@ -142,18 +137,6 @@
             this.tableExportButton.Text = "Export...";
             this.tableExportButton.UseVisualStyleBackColor = true;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
             // ContinueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +171,5 @@
         private System.Windows.Forms.Label deviceLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button tableExportButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

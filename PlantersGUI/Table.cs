@@ -54,5 +54,10 @@ namespace PlantersGUI
         {
 
         }
+
+        public void update()
+        {
+
+        }
     }
 }
