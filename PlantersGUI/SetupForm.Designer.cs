@@ -92,11 +92,11 @@
             // 
             // addDeviceButton
             // 
-            this.addDeviceButton.Location = new System.Drawing.Point(371, 83);
+            this.addDeviceButton.Location = new System.Drawing.Point(345, 83);
             this.addDeviceButton.Name = "addDeviceButton";
-            this.addDeviceButton.Size = new System.Drawing.Size(75, 23);
+            this.addDeviceButton.Size = new System.Drawing.Size(101, 23);
             this.addDeviceButton.TabIndex = 7;
-            this.addDeviceButton.Text = "Add Device";
+            this.addDeviceButton.Text = "Add Constraint";
             this.addDeviceButton.UseVisualStyleBackColor = true;
             this.addDeviceButton.Click += new System.EventHandler(this.AddDeviceButton_Click);
             // 

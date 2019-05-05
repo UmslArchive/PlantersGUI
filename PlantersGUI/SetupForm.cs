@@ -84,6 +84,13 @@ namespace PlantersGUI
         {
             //Initialize a device object.
             Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+
+            //Clear the comboBox.
+            deviceComboBox.Items.Clear();
+
+            //Add devices to the combobox.
+            foreach (Device device in Program.exp.devices)
+                deviceComboBox.Items.Add(device.id);
         }
     }
 }
