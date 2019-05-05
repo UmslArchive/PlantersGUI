@@ -82,8 +82,16 @@ namespace PlantersGUI
 
         private void AddDeviceButton_Click(object sender, EventArgs e)
         {
-            //Initialize a device object.
-            Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+            //Initialize a device object if not duplicate.
+            bool isDuplicate = false;
+            foreach(Device device in Program.exp.devices)
+            {
+                if (device.id == deviceComboBox.Text)
+                    isDuplicate = true;
+            }
+
+            if(!isDuplicate)
+                Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
 
             //Clear the comboBox.
             deviceComboBox.Items.Clear();
