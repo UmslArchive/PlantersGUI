@@ -1,4 +1,4 @@
-# This team Planters' class project.
+# This is team Planters' class project.
 # CS4500 - Software Professionalism
 # University of Missouri - St Louis (UMSL)
 
