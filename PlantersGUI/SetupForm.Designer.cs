@@ -99,7 +99,18 @@
             // 
             // valueNumericUpDown
             // 
+            this.valueNumericUpDown.DecimalPlaces = 2;
             this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
+            this.valueNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.valueNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.valueNumericUpDown.Name = "valueNumericUpDown";
             this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.valueNumericUpDown.TabIndex = 5;
