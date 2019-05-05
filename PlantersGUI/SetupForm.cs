@@ -79,5 +79,11 @@ namespace PlantersGUI
             //Remove table item from listbox.
             tablesListBox.Items.Remove(tablesListBox.SelectedItem);
         }
+
+        private void AddDeviceButton_Click(object sender, EventArgs e)
+        {
+            //Initialize a device object.
+            Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+        }
     }
 }

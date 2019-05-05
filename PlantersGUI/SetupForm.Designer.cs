@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SetupForm_TabControl = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
             this.applyButton = new System.Windows.Forms.Button();
             this.addDeviceButton = new System.Windows.Forms.Button();
-            this.valueTextBox = new System.Windows.Forms.TextBox();
             this.inequalityComboBox = new System.Windows.Forms.ComboBox();
             this.constraintLabel = new System.Windows.Forms.Label();
             this.variableTextBox = new System.Windows.Forms.TextBox();
@@ -47,26 +46,28 @@
             this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.SetupForm_TabControl.SuspendLayout();
+            this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.tabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
             this.tablesTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // SetupForm_TabControl
+            // tabControl
             // 
-            this.SetupForm_TabControl.Controls.Add(this.deviceManageTab);
-            this.SetupForm_TabControl.Controls.Add(this.tablesTab);
-            this.SetupForm_TabControl.Location = new System.Drawing.Point(12, 12);
-            this.SetupForm_TabControl.Name = "SetupForm_TabControl";
-            this.SetupForm_TabControl.SelectedIndex = 0;
-            this.SetupForm_TabControl.Size = new System.Drawing.Size(499, 353);
-            this.SetupForm_TabControl.TabIndex = 0;
+            this.tabControl.Controls.Add(this.deviceManageTab);
+            this.tabControl.Controls.Add(this.tablesTab);
+            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(499, 353);
+            this.tabControl.TabIndex = 0;
             // 
             // deviceManageTab
             // 
+            this.deviceManageTab.Controls.Add(this.valueNumericUpDown);
             this.deviceManageTab.Controls.Add(this.applyButton);
             this.deviceManageTab.Controls.Add(this.addDeviceButton);
-            this.deviceManageTab.Controls.Add(this.valueTextBox);
             this.deviceManageTab.Controls.Add(this.inequalityComboBox);
             this.deviceManageTab.Controls.Add(this.constraintLabel);
             this.deviceManageTab.Controls.Add(this.variableTextBox);
@@ -97,15 +98,7 @@
             this.addDeviceButton.TabIndex = 7;
             this.addDeviceButton.Text = "Add Device";
             this.addDeviceButton.UseVisualStyleBackColor = true;
-            // 
-            // valueTextBox
-            // 
-            this.valueTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.valueTextBox.Location = new System.Drawing.Point(368, 37);
-            this.valueTextBox.Name = "valueTextBox";
-            this.valueTextBox.Size = new System.Drawing.Size(78, 20);
-            this.valueTextBox.TabIndex = 6;
-            this.valueTextBox.Text = "Enter Value...";
+            this.addDeviceButton.Click += new System.EventHandler(this.AddDeviceButton_Click);
             // 
             // inequalityComboBox
             // 
@@ -260,6 +253,13 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // valueNumericUpDown
+            // 
+            this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
+            this.valueNumericUpDown.Name = "valueNumericUpDown";
+            this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
+            this.valueNumericUpDown.TabIndex = 9;
+            // 
             // SetupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,22 +267,23 @@
             this.ClientSize = new System.Drawing.Size(528, 450);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.SetupForm_TabControl);
+            this.Controls.Add(this.tabControl);
             this.Name = "SetupForm";
             this.Text = "Setup Experiment";
             this.Activated += new System.EventHandler(this.SetupForm_Activated);
-            this.SetupForm_TabControl.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.deviceManageTab.ResumeLayout(false);
             this.deviceManageTab.PerformLayout();
             this.tablesTab.ResumeLayout(false);
             this.tablesTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl SetupForm_TabControl;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage deviceManageTab;
         private System.Windows.Forms.Label ioLabel;
         private System.Windows.Forms.TabPage tablesTab;
@@ -293,7 +294,6 @@
         private System.Windows.Forms.Label constraintLabel;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button addDeviceButton;
-        private System.Windows.Forms.TextBox valueTextBox;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label tablesLabel;
@@ -301,5 +301,6 @@
         private System.Windows.Forms.Button addTableButton;
         private System.Windows.Forms.Button removeTableButton;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.NumericUpDown valueNumericUpDown;
     }
 }
