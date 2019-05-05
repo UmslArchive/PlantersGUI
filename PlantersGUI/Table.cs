@@ -7,12 +7,35 @@
         public decimal refreshRate;
 
         //Constructor.
-        public Table(string titleString, string indep, string dep, decimal refresh)
+        public Table(string titleString, string indep, string dep, decimal refresh, string unit)
         {
             title = titleString;
             indepVariable = indep;
             depVariable = dep;
-            refreshRate = refresh;
+
+            //Refresh Rate in milliseconds.
+            switch (unit)
+            {
+                case "Second(s)":
+                    refreshRate = refresh * 1000;
+                    break;
+
+                case "Minute(s)":
+                    refreshRate = refresh * 1000 * 60;
+                    break;
+
+                case "Hour(s)":
+                    refreshRate = refresh * 1000 * 60 * 60;
+                    break;
+
+                case "Day(s)":
+                    refreshRate = refresh * 1000 * 60 * 60 * 24;
+                    break;
+
+                default:
+                    refreshRate = 1000.0M; //One second.
+                    break;
+            }
         }
 
         //TODO: add data link for live data display in continueForm.
