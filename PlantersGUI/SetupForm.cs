@@ -84,9 +84,9 @@ namespace PlantersGUI
         {
             //Initialize a device object if not duplicate.
             bool isDuplicate = false;
-            foreach(Device device in Program.exp.devices)
+            foreach(UserVariable uv in Program.exp.userVariables)
             {
-                if (device.id == deviceComboBox.Text)
+                if (uv.deviceID == deviceComboBox.Text)
                     isDuplicate = true;
             }
 
@@ -94,17 +94,17 @@ namespace PlantersGUI
             if(!isDuplicate && deviceComboBox.Text != "Select Device...")
             {
                 if(constraintCheckBox.Checked)
-                    Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
                 else
-                    Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
+                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
             }              
 
             //Clear the comboBox.
             deviceComboBox.Items.Clear();
 
             //Add devices to the combobox.
-            foreach (Device device in Program.exp.devices)
-                deviceComboBox.Items.Add(device.id);
+            foreach (UserVariable uv in Program.exp.userVariables)
+                deviceComboBox.Items.Add(uv.deviceID);
         }
 
         private void SetupForm_Load(object sender, EventArgs e)

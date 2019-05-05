@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PlantersGUI
 {
-    public class Device //Better name for this class might be "UserVariable".
+    public class UserVariable //Better name for this class might be "UserVariable".
     {
         public enum ConstraintSetting
         {
@@ -53,16 +53,16 @@ namespace PlantersGUI
         }
 
         //Data.
-        public string id;
+        public string deviceID;
         public string varName;
         public Constraint constraint;
         public ConstraintSetting currentSetting;
 
         //Constructor.
-        public Device(string idString, string var, decimal cVal, string setting)
+        public UserVariable(string idString, string var, decimal cVal, string setting)
         {
             //Set string variables.
-            id = idString;
+            deviceID = idString;
             varName = var;
 
             //Set currentSetting based on passed setting string.
