@@ -13,9 +13,8 @@ namespace PlantersGUI
     public partial class SetupForm : Form
     {
         //Declare forms which are possible to navigate from "SetupForm">
-        public static EntryForm entryForm = new EntryForm();
-        public static ContinueForm continueForm = new ContinueForm();
-        public static TableConfigForm tableConfigForm = new TableConfigForm();
+        public static ContinueForm continueForm;
+        public static TableConfigForm tableConfigForm;
 
         public SetupForm()
         {
@@ -26,7 +25,7 @@ namespace PlantersGUI
         {
             //Switch to "EntryForm".
             Close();
-            entryForm.Show();
+            Program.entryForm.Show();
 
         }
 
@@ -34,18 +33,21 @@ namespace PlantersGUI
         {
             //Switch to "ContinueForm".
             Close();
+            continueForm = new ContinueForm();
             continueForm.Show();
         }
 
         private void AddTableButton_Click(object sender, EventArgs e)
         {
             //Show "TableConfigForm" as dialog window.
+            tableConfigForm = new TableConfigForm();
             tableConfigForm.ShowDialog();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
             //Show "TableConfigForm" as dialog window.
+            tableConfigForm = new TableConfigForm();
             tableConfigForm.ShowDialog();
         }
 
