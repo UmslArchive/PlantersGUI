@@ -17,19 +17,19 @@
             switch (unit)
             {
                 case "Second(s)":
-                    refreshRate = refresh * 1000;
+                    refreshRate = refresh * 1000.0M;
                     break;
 
                 case "Minute(s)":
-                    refreshRate = refresh * 1000 * 60;
+                    refreshRate = refresh * 1000.0M * 60.0M;
                     break;
 
                 case "Hour(s)":
-                    refreshRate = refresh * 1000 * 60 * 60;
+                    refreshRate = refresh * 1000.0M * 60.0M * 60.0M;
                     break;
 
                 case "Day(s)":
-                    refreshRate = refresh * 1000 * 60 * 60 * 24;
+                    refreshRate = refresh * 1000.0M * 60.0M * 60.0M * 24.0M;
                     break;
 
                 default:
