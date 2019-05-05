@@ -47,6 +47,7 @@
             this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.userVariableListLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).BeginInit();
@@ -65,6 +66,7 @@
             // 
             // deviceManageTab
             // 
+            this.deviceManageTab.Controls.Add(this.userVariableListLabel);
             this.deviceManageTab.Controls.Add(this.constraintCheckBox);
             this.deviceManageTab.Controls.Add(this.valueNumericUpDown);
             this.deviceManageTab.Controls.Add(this.applyButton);
@@ -78,7 +80,7 @@
             this.deviceManageTab.Name = "deviceManageTab";
             this.deviceManageTab.Size = new System.Drawing.Size(491, 327);
             this.deviceManageTab.TabIndex = 0;
-            this.deviceManageTab.Text = "Device Mangement";
+            this.deviceManageTab.Text = "User Variables";
             this.deviceManageTab.UseVisualStyleBackColor = true;
             // 
             // constraintCheckBox
@@ -97,7 +99,18 @@
             // 
             // valueNumericUpDown
             // 
+            this.valueNumericUpDown.DecimalPlaces = 2;
             this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
+            this.valueNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.valueNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.valueNumericUpDown.Name = "valueNumericUpDown";
             this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
             this.valueNumericUpDown.TabIndex = 5;
@@ -267,6 +280,15 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // userVariableListLabel
+            // 
+            this.userVariableListLabel.AutoSize = true;
+            this.userVariableListLabel.Location = new System.Drawing.Point(31, 122);
+            this.userVariableListLabel.Name = "userVariableListLabel";
+            this.userVariableListLabel.Size = new System.Drawing.Size(124, 13);
+            this.userVariableListLabel.TabIndex = 9;
+            this.userVariableListLabel.Text = "USER_VARIABLE_LIST";
+            // 
             // SetupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,5 +332,6 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.NumericUpDown valueNumericUpDown;
         private System.Windows.Forms.CheckBox constraintCheckBox;
+        private System.Windows.Forms.Label userVariableListLabel;
     }
 }

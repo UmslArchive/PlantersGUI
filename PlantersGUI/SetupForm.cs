@@ -97,19 +97,20 @@ namespace PlantersGUI
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
                 else
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
-            }                         
+            }                                       
 
-            //Add devices to the combobox.
-            foreach (UserVariable uv in Program.exp.userVariables)
-                deviceComboBox.Items.Add(uv.deviceID);
+            UpdateUserVariableLabel();
         }
 
         private void SetupForm_Load(object sender, EventArgs e)
         {
             //TODO: Populate deviceComboBox with devices. (arduino sensors)
 
-            //Set default selection.
+            //Add devices to the combobox.
             deviceComboBox.Text = "No Device";
+
+            //Populate userVariableLable list.
+            UpdateUserVariableLabel();
         }
 
         private void ConstraintCheckBox_Click(object sender, EventArgs e)
@@ -130,6 +131,35 @@ namespace PlantersGUI
         private void VariableTextBox_Click(object sender, EventArgs e)
         {
             variableTextBox.SelectAll();
+        }
+
+        private void UpdateUserVariableLabel()
+        {
+            //Clear the label text.
+            userVariableListLabel.Text = "";
+
+            //Add each user variable to the list.
+            foreach(UserVariable uv in Program.exp.userVariables)
+            {
+                //Build list item string:
+                string newListItem = "";
+
+                //Append deviceID and varName.
+                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1).ToString() + ". " + uv.varName + "    " + uv.deviceID + "    ";
+
+                //Append constraint.
+                if(uv.constraint != null)
+                    newListItem += uv.constraint.lowerBound.ToString() + "    " + uv.constraint.upperBound.ToString() + "\n";
+                else
+                    newListItem += "NULL    NULL\n";
+
+                userVariableListLabel.Text += newListItem;
+            }
+        }
+
+        private void RefreshDevices()
+        {
+            //TODO
         }
     }
 }

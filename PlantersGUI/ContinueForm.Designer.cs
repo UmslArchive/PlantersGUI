@@ -64,13 +64,13 @@
             // 
             // tablesComboBox
             // 
+            this.tablesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tablesComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablesComboBox.FormattingEnabled = true;
             this.tablesComboBox.Location = new System.Drawing.Point(12, 27);
             this.tablesComboBox.Name = "tablesComboBox";
             this.tablesComboBox.Size = new System.Drawing.Size(350, 21);
             this.tablesComboBox.TabIndex = 2;
-            this.tablesComboBox.Text = "Select Table...";
             // 
             // saveButton
             // 
@@ -92,7 +92,7 @@
             this.deviceMonitorGroupBox.Size = new System.Drawing.Size(349, 327);
             this.deviceMonitorGroupBox.TabIndex = 6;
             this.deviceMonitorGroupBox.TabStop = false;
-            this.deviceMonitorGroupBox.Text = "Devices Monitor";
+            this.deviceMonitorGroupBox.Text = "Device Monitor";
             this.deviceMonitorGroupBox.Enter += new System.EventHandler(this.DeviceMonitorGroupBox_Enter);
             // 
             // deviceStatusLabel
