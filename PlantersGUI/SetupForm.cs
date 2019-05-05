@@ -90,8 +90,14 @@ namespace PlantersGUI
                     isDuplicate = true;
             }
 
-            if(!isDuplicate)
-                Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+            //Add variable if not a duplicate entry and user has modified text.
+            if(!isDuplicate && deviceComboBox.Text != "Select Device...")
+            {
+                if(constraintCheckBox.Checked)
+                    Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+                else
+                    Program.exp.devices.Add(new Device(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
+            }              
 
             //Clear the comboBox.
             deviceComboBox.Items.Clear();

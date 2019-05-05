@@ -32,7 +32,7 @@
             this.deviceManageTab = new System.Windows.Forms.TabPage();
             this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.applyButton = new System.Windows.Forms.Button();
-            this.addDeviceButton = new System.Windows.Forms.Button();
+            this.addVarButton = new System.Windows.Forms.Button();
             this.inequalityComboBox = new System.Windows.Forms.ComboBox();
             this.variableTextBox = new System.Windows.Forms.TextBox();
             this.varNameLabel = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.deviceManageTab.Controls.Add(this.constraintCheckBox);
             this.deviceManageTab.Controls.Add(this.valueNumericUpDown);
             this.deviceManageTab.Controls.Add(this.applyButton);
-            this.deviceManageTab.Controls.Add(this.addDeviceButton);
+            this.deviceManageTab.Controls.Add(this.addVarButton);
             this.deviceManageTab.Controls.Add(this.inequalityComboBox);
             this.deviceManageTab.Controls.Add(this.variableTextBox);
             this.deviceManageTab.Controls.Add(this.varNameLabel);
@@ -97,15 +97,15 @@
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             // 
-            // addDeviceButton
+            // addVarButton
             // 
-            this.addDeviceButton.Location = new System.Drawing.Point(345, 83);
-            this.addDeviceButton.Name = "addDeviceButton";
-            this.addDeviceButton.Size = new System.Drawing.Size(101, 23);
-            this.addDeviceButton.TabIndex = 7;
-            this.addDeviceButton.Text = "Add Constraint";
-            this.addDeviceButton.UseVisualStyleBackColor = true;
-            this.addDeviceButton.Click += new System.EventHandler(this.AddDeviceButton_Click);
+            this.addVarButton.Location = new System.Drawing.Point(352, 83);
+            this.addVarButton.Name = "addVarButton";
+            this.addVarButton.Size = new System.Drawing.Size(94, 23);
+            this.addVarButton.TabIndex = 7;
+            this.addVarButton.Text = "Add Variable";
+            this.addVarButton.UseVisualStyleBackColor = true;
+            this.addVarButton.Click += new System.EventHandler(this.AddDeviceButton_Click);
             // 
             // inequalityComboBox
             // 
@@ -124,7 +124,7 @@
             // variableTextBox
             // 
             this.variableTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.variableTextBox.Location = new System.Drawing.Point(175, 38);
+            this.variableTextBox.Location = new System.Drawing.Point(31, 38);
             this.variableTextBox.MaxLength = 36;
             this.variableTextBox.Name = "variableTextBox";
             this.variableTextBox.Size = new System.Drawing.Size(128, 20);
@@ -136,7 +136,7 @@
             // 
             this.varNameLabel.AutoSize = true;
             this.varNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.varNameLabel.Location = new System.Drawing.Point(172, 21);
+            this.varNameLabel.Location = new System.Drawing.Point(28, 18);
             this.varNameLabel.Name = "varNameLabel";
             this.varNameLabel.Size = new System.Drawing.Size(93, 13);
             this.varNameLabel.TabIndex = 2;
@@ -146,7 +146,9 @@
             // 
             this.deviceComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deviceComboBox.FormattingEnabled = true;
-            this.deviceComboBox.Location = new System.Drawing.Point(44, 38);
+            this.deviceComboBox.Items.AddRange(new object[] {
+            "No Device"});
+            this.deviceComboBox.Location = new System.Drawing.Point(174, 37);
             this.deviceComboBox.Name = "deviceComboBox";
             this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
             this.deviceComboBox.TabIndex = 1;
@@ -156,7 +158,7 @@
             // 
             this.ioLabel.AutoSize = true;
             this.ioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ioLabel.Location = new System.Drawing.Point(41, 21);
+            this.ioLabel.Location = new System.Drawing.Point(171, 18);
             this.ioLabel.Name = "ioLabel";
             this.ioLabel.Size = new System.Drawing.Size(74, 13);
             this.ioLabel.TabIndex = 0;
@@ -297,7 +299,7 @@
         private System.Windows.Forms.TextBox variableTextBox;
         private System.Windows.Forms.ComboBox inequalityComboBox;
         private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.Button addDeviceButton;
+        private System.Windows.Forms.Button addVarButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label tablesLabel;

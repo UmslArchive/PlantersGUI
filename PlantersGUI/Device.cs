@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PlantersGUI
 {
-    public class Device
+    public class Device //Better name for this class might be "UserVariable".
     {
         public enum ConstraintSetting
         {
@@ -84,13 +84,20 @@ namespace PlantersGUI
                     currentSetting = ConstraintSetting.LESSEQUAL;
                     break;
 
-                default: //case "="
+                case "=":
                     currentSetting = ConstraintSetting.EQUAL;
+                    break;
+                   
+                default: //Null case. (box unchecked)
+                    currentSetting = ConstraintSetting.NULL;
                     break;
             }
 
             //Set the constraint.
-            constraint = new Constraint(cVal, currentSetting);
+            if (currentSetting != ConstraintSetting.NULL)
+                constraint = new Constraint(cVal, currentSetting);
+            else
+                constraint = null;
         }
 
         //Function that connects the device and assigns a name.
