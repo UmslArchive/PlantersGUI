@@ -32,7 +32,23 @@ namespace PlantersGUI
         //Function resets all textboxes, etc.
         private void ResetForm()
         {
+            //Clear title.
             titleTextBox.Clear();
+
+            //Clear comboboxes.
+            indepVarComboBox.Items.Clear();
+            depVarComboBox.Items.Clear();
+            indepVarComboBox.Items.Add("Time");
+
+            //Populate independent and dependent variable combo boxes with user defined variables.
+            if(Program.exp.userVariables.Count > 0)
+            {
+                foreach(UserVariable uv in Program.exp.userVariables)
+                {
+                    indepVarComboBox.Items.Add(uv.varName);
+                    depVarComboBox.Items.Add(uv.varName);
+                }
+            }
         }
 
         private void TableConfigForm_Load(object sender, EventArgs e)
