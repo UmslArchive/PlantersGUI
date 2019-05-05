@@ -126,7 +126,7 @@
             // 
             // variableTextBox
             // 
-            this.variableTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.variableTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.variableTextBox.Location = new System.Drawing.Point(175, 38);
             this.variableTextBox.MaxLength = 36;
             this.variableTextBox.Name = "variableTextBox";
@@ -147,7 +147,7 @@
             // 
             // deviceComboBox
             // 
-            this.deviceComboBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.deviceComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deviceComboBox.FormattingEnabled = true;
             this.deviceComboBox.Location = new System.Drawing.Point(44, 38);
             this.deviceComboBox.Name = "deviceComboBox";
