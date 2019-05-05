@@ -86,23 +86,18 @@ namespace PlantersGUI
             bool isDuplicate = false;
             foreach(UserVariable uv in Program.exp.userVariables)
             {
-                if (uv.deviceID == deviceComboBox.Text)
+                if (uv.varName == variableTextBox.Text)
                     isDuplicate = true;
             }
 
             //Add variable if not a duplicate entry and user has modified text.
-            if(!isDuplicate && deviceComboBox.Text != "Select Device..." && variableTextBox.Text != "Type Name...")
+            if(!isDuplicate && variableTextBox.Text != "Type Name...")
             {
                 if(constraintCheckBox.Checked)
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
                 else
                     Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
-            }              
-
-            //Clear the comboBox.
-            deviceComboBox.Items.Clear();
-            deviceComboBox.Items.Add("No Device");
-            deviceComboBox.Text = "No Device";
+            }                         
 
             //Add devices to the combobox.
             foreach (UserVariable uv in Program.exp.userVariables)
