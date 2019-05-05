@@ -2,7 +2,7 @@
 {
     public class Device
     {
-        enum ConstraintSetting
+        public enum ConstraintSetting
         {
             LESS,
             GREATER,
@@ -14,14 +14,16 @@
         //Data.
         public string id;
         public string varName;
-        public double refreshRate;
-        public double constraintValue;
-        public int currentConstraintSetting;
+        public decimal constraintValue;
+        public ConstraintSetting currentSetting;
 
         //Constructor.
-        public Device()
+        public Device(string idString, string var, decimal cVal, ConstraintSetting setting)
         {
-
+            id = idString;
+            varName = var;
+            constraintValue = cVal;
+            currentSetting = setting;
         }
 
         //Function that connects the device and assigns a name.
