@@ -54,6 +54,7 @@
             // 
             // indepVarComboBox
             // 
+            this.indepVarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.indepVarComboBox.FormattingEnabled = true;
             this.indepVarComboBox.Items.AddRange(new object[] {
             "Time"});
@@ -94,6 +95,7 @@
             // 
             // depVarComboBox
             // 
+            this.depVarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.depVarComboBox.FormattingEnabled = true;
             this.depVarComboBox.Location = new System.Drawing.Point(20, 133);
             this.depVarComboBox.Name = "depVarComboBox";
