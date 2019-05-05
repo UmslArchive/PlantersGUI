@@ -29,6 +29,8 @@ namespace PlantersGUI
         [STAThread]
 
 
+
+        //Entry point.
         static void Main()
         {
             //Run the application and display entryForm.
