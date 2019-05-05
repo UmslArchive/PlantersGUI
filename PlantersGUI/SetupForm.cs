@@ -92,5 +92,10 @@ namespace PlantersGUI
             foreach (Device device in Program.exp.devices)
                 deviceComboBox.Items.Add(device.id);
         }
+
+        private void SetupForm_Load(object sender, EventArgs e)
+        {
+            //TODO: Populate deviceComboBox with devices. (arduino sensors)
+        }
     }
 }

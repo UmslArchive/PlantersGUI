@@ -30,10 +30,10 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
+            this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.applyButton = new System.Windows.Forms.Button();
             this.addDeviceButton = new System.Windows.Forms.Button();
             this.inequalityComboBox = new System.Windows.Forms.ComboBox();
-            this.constraintLabel = new System.Windows.Forms.Label();
             this.variableTextBox = new System.Windows.Forms.TextBox();
             this.varNameLabel = new System.Windows.Forms.Label();
             this.deviceComboBox = new System.Windows.Forms.ComboBox();
@@ -46,11 +46,11 @@
             this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.constraintCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
-            this.tablesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).BeginInit();
+            this.tablesTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -65,11 +65,11 @@
             // 
             // deviceManageTab
             // 
+            this.deviceManageTab.Controls.Add(this.constraintCheckBox);
             this.deviceManageTab.Controls.Add(this.valueNumericUpDown);
             this.deviceManageTab.Controls.Add(this.applyButton);
             this.deviceManageTab.Controls.Add(this.addDeviceButton);
             this.deviceManageTab.Controls.Add(this.inequalityComboBox);
-            this.deviceManageTab.Controls.Add(this.constraintLabel);
             this.deviceManageTab.Controls.Add(this.variableTextBox);
             this.deviceManageTab.Controls.Add(this.varNameLabel);
             this.deviceManageTab.Controls.Add(this.deviceComboBox);
@@ -80,6 +80,13 @@
             this.deviceManageTab.TabIndex = 0;
             this.deviceManageTab.Text = "Device Mangement";
             this.deviceManageTab.UseVisualStyleBackColor = true;
+            // 
+            // valueNumericUpDown
+            // 
+            this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
+            this.valueNumericUpDown.Name = "valueNumericUpDown";
+            this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
+            this.valueNumericUpDown.TabIndex = 9;
             // 
             // applyButton
             // 
@@ -113,16 +120,6 @@
             this.inequalityComboBox.Name = "inequalityComboBox";
             this.inequalityComboBox.Size = new System.Drawing.Size(48, 21);
             this.inequalityComboBox.TabIndex = 5;
-            // 
-            // constraintLabel
-            // 
-            this.constraintLabel.AutoSize = true;
-            this.constraintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.constraintLabel.Location = new System.Drawing.Point(310, 21);
-            this.constraintLabel.Name = "constraintLabel";
-            this.constraintLabel.Size = new System.Drawing.Size(68, 13);
-            this.constraintLabel.TabIndex = 4;
-            this.constraintLabel.Text = "Constraint:";
             // 
             // variableTextBox
             // 
@@ -253,12 +250,16 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // valueNumericUpDown
+            // constraintCheckBox
             // 
-            this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
-            this.valueNumericUpDown.Name = "valueNumericUpDown";
-            this.valueNumericUpDown.Size = new System.Drawing.Size(75, 20);
-            this.valueNumericUpDown.TabIndex = 9;
+            this.constraintCheckBox.AutoSize = true;
+            this.constraintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.constraintCheckBox.Location = new System.Drawing.Point(313, 17);
+            this.constraintCheckBox.Name = "constraintCheckBox";
+            this.constraintCheckBox.Size = new System.Drawing.Size(83, 17);
+            this.constraintCheckBox.TabIndex = 10;
+            this.constraintCheckBox.Text = "Constraint";
+            this.constraintCheckBox.UseVisualStyleBackColor = true;
             // 
             // SetupForm
             // 
@@ -271,12 +272,13 @@
             this.Name = "SetupForm";
             this.Text = "Setup Experiment";
             this.Activated += new System.EventHandler(this.SetupForm_Activated);
+            this.Load += new System.EventHandler(this.SetupForm_Load);
             this.tabControl.ResumeLayout(false);
             this.deviceManageTab.ResumeLayout(false);
             this.deviceManageTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).EndInit();
             this.tablesTab.ResumeLayout(false);
             this.tablesTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,7 +293,6 @@
         private System.Windows.Forms.Label varNameLabel;
         private System.Windows.Forms.TextBox variableTextBox;
         private System.Windows.Forms.ComboBox inequalityComboBox;
-        private System.Windows.Forms.Label constraintLabel;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button addDeviceButton;
         private System.Windows.Forms.Button startButton;
@@ -302,5 +303,6 @@
         private System.Windows.Forms.Button removeTableButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.NumericUpDown valueNumericUpDown;
+        private System.Windows.Forms.CheckBox constraintCheckBox;
     }
 }

@@ -39,5 +39,10 @@ namespace PlantersGUI
         {
             this.ResetForm();
         }
+
+        private void DepVarComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

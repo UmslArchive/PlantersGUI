@@ -11,7 +11,8 @@ namespace PlantersGUI
             GREATER,
             LESSEQUAL,
             GREATEREQUAL,
-            EQUAL
+            EQUAL,
+            NULL
         };
 
         public class Constraint

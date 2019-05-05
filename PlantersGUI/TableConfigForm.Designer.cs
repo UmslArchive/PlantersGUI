@@ -55,6 +55,8 @@
             // indepVarComboBox
             // 
             this.indepVarComboBox.FormattingEnabled = true;
+            this.indepVarComboBox.Items.AddRange(new object[] {
+            "Time"});
             this.indepVarComboBox.Location = new System.Drawing.Point(20, 77);
             this.indepVarComboBox.Name = "indepVarComboBox";
             this.indepVarComboBox.Size = new System.Drawing.Size(186, 21);
@@ -97,6 +99,7 @@
             this.depVarComboBox.Name = "depVarComboBox";
             this.depVarComboBox.Size = new System.Drawing.Size(186, 21);
             this.depVarComboBox.TabIndex = 5;
+            this.depVarComboBox.SelectedIndexChanged += new System.EventHandler(this.DepVarComboBox_SelectedIndexChanged);
             // 
             // refreshRateLabel
             // 
