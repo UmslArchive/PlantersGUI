@@ -142,14 +142,14 @@ namespace PlantersGUI
             foreach(UserVariable uv in Program.exp.userVariables)
             {
                 //Build list item string:
-                string newListItem;
+                string newListItem = "";
 
                 //Append deviceID and varName.
-                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1) + ". " + uv.varName + "    " + uv.deviceID + "    ";
+                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1).ToString() + ". " + uv.varName + "    " + uv.deviceID + "    ";
 
                 //Append constraint.
                 if(uv.constraint != null)
-                    newListItem += uv.constraint.lowerBound + "    " + uv.constraint.upperBound + "\n";
+                    newListItem += uv.constraint.lowerBound.ToString() + "    " + uv.constraint.upperBound.ToString() + "\n";
                 else
                     newListItem += "NULL    NULL\n";
 
