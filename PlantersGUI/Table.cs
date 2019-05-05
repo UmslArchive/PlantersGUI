@@ -1,10 +1,14 @@
-﻿namespace PlantersGUI
+﻿using System.Data;
+
+namespace PlantersGUI
 {
     public class Table
     {
         public string title;
         public string indepVariable, depVariable;
         public decimal refreshRate;
+
+        //public DataTable dataTable;
 
         //Constructor.
         public Table(string titleString, string indep, string dep, decimal refresh, string unit)
@@ -36,6 +40,11 @@
                     refreshRate = 1000.0M; //One second.
                     break;
             }
+
+            //Initialize dataTable.
+            //dataTable = new DataTable(titleString);
+            //dataTable.Columns.Add(indepVariable);
+            //dataTable.Columns.Add(depVariable);
         }
 
         //TODO: add data link for live data display in continueForm.
