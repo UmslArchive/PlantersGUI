@@ -24,7 +24,11 @@ namespace PlantersGUI
 
         private void ContinueForm_Load(object sender, EventArgs e)
         {
-
+            //Load tables into tablesComboBox.
+            foreach(Table table in Program.exp.tables)
+            {
+                tablesComboBox.Items.Add(table.title);
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

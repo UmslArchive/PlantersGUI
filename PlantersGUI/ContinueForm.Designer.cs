@@ -64,7 +64,7 @@
             // 
             // tablesComboBox
             // 
-            this.tablesComboBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tablesComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablesComboBox.FormattingEnabled = true;
             this.tablesComboBox.Location = new System.Drawing.Point(12, 27);
             this.tablesComboBox.Name = "tablesComboBox";

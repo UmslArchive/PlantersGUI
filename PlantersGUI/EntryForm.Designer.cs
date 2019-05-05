@@ -85,6 +85,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "EntryForm";
             this.Text = "Planters";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntryForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

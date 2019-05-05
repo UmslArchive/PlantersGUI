@@ -6,8 +6,8 @@ namespace PlantersGUI
     public partial class EntryForm : Form
     {
         //Declare forms which can be navigated to from "EntryForm".
-        public static SetupForm setupForm = new SetupForm();
-        public static ContinueForm continueForm = new ContinueForm();
+        public static SetupForm setupForm;
+        public static ContinueForm continueForm;
 
         public EntryForm()
         {
@@ -21,14 +21,21 @@ namespace PlantersGUI
         {
             //Switch to "SetupForm".
             this.Visible = false;
-            setupForm.Visible = true;
+            setupForm = new SetupForm();
+            setupForm.Show();
         }
 
         private void EntryContinueButton_Click(object sender, EventArgs e)
         {
             //Switch to "ContinueForm".
             this.Visible = false;
-            continueForm.Visible = true;
+            continueForm = new ContinueForm();
+            continueForm.Show();
+        }
+
+        private void EntryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
