@@ -102,6 +102,8 @@ namespace PlantersGUI
             //Add devices to the combobox.
             foreach (UserVariable uv in Program.exp.userVariables)
                 deviceComboBox.Items.Add(uv.deviceID);
+
+            updateUserVariableLabel();
         }
 
         private void SetupForm_Load(object sender, EventArgs e)
@@ -130,6 +132,30 @@ namespace PlantersGUI
         private void VariableTextBox_Click(object sender, EventArgs e)
         {
             variableTextBox.SelectAll();
+        }
+
+        private void updateUserVariableLabel()
+        {
+            //Clear the label text.
+            userVariableListLabel.Text = "";
+
+            //Add each user variable to the list.
+            foreach(UserVariable uv in Program.exp.userVariables)
+            {
+                //Build list item string:
+                string newListItem;
+
+                //Append deviceID and varName.
+                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1) + ". " + uv.varName + "    " + uv.deviceID + "    ";
+
+                //Append constraint.
+                if(uv.constraint != null)
+                    newListItem += uv.constraint.lowerBound + "    " + uv.constraint.upperBound + "\n";
+                else
+                    newListItem += "NULL    NULL\n";
+
+                userVariableListLabel.Text += newListItem;
+            }
         }
     }
 }
