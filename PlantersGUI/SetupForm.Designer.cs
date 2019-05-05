@@ -253,6 +253,8 @@
             // constraintCheckBox
             // 
             this.constraintCheckBox.AutoSize = true;
+            this.constraintCheckBox.Checked = true;
+            this.constraintCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.constraintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.constraintCheckBox.Location = new System.Drawing.Point(313, 17);
             this.constraintCheckBox.Name = "constraintCheckBox";
@@ -260,6 +262,7 @@
             this.constraintCheckBox.TabIndex = 10;
             this.constraintCheckBox.Text = "Constraint";
             this.constraintCheckBox.UseVisualStyleBackColor = true;
+            this.constraintCheckBox.Click += new System.EventHandler(this.ConstraintCheckBox_Click);
             // 
             // SetupForm
             // 

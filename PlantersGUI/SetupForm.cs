@@ -97,5 +97,20 @@ namespace PlantersGUI
         {
             //TODO: Populate deviceComboBox with devices. (arduino sensors)
         }
+
+        private void ConstraintCheckBox_Click(object sender, EventArgs e)
+        {
+            //Disable constraint controls if unchecked.
+            if(!constraintCheckBox.Checked)
+            {
+                inequalityComboBox.Enabled = false;
+                valueNumericUpDown.Enabled = false;
+            }
+            else
+            {
+                inequalityComboBox.Enabled = true;
+                valueNumericUpDown.Enabled = true;
+            }
+        }
     }
 }
