@@ -45,22 +45,22 @@ namespace PlantersGUI
 
             //Spoof Hydration Data.
             Random rand = new Random();
-            for(int i = 0; i < 15; ++i)
+            for(int i = 0; i < 5; ++i)
             {
                 //Determine + or -
                 int select = rand.Next(2);
 
                 //Add 15 seconds of data.
                 if(select > 0)
-                    data.Add(1000 + rand.Next(42));
+                    data.Add(800 + rand.Next(42));
                 else
-                    data.Add(1000 - rand.Next(42));
+                    data.Add(800 - rand.Next(42));
             }
 
-            //Drop value to between 500 to 800 over 5 seconds.
-            for(int i = 0; i < 5; ++i)
+            //Drop value to between 500 to 700 over 5 seconds.
+            for(int i = 0; i < 10; ++i)
             {
-                data.Add(900 - i * 75 + rand.Next(42));
+                data.Add(700 - i * 10 + rand.Next(42));
             }
 
             //Slowly drop over 60 seconds.
@@ -74,9 +74,9 @@ namespace PlantersGUI
             {
                 int select = rand.Next(2);
                 if (select > 0)
-                    data.Add(600 + rand.Next(42));
+                    data.Add(500 + rand.Next(42));
                 else
-                    data.Add(600 - rand.Next(42));
+                    data.Add(500 - rand.Next(42));
             }
         }
 

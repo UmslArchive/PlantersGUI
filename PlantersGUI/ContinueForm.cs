@@ -23,6 +23,7 @@ namespace PlantersGUI
         private int selectedTableIndex = -1;
         private int tableTick = 0;
         private int monitorTick = 0;
+        private int waterPumped = 0;
 
         public ContinueForm()
         {
@@ -122,10 +123,12 @@ namespace PlantersGUI
             //Update device status reading.
             UpdateTableIndex();
             statusListLabel.Text = Program.exp.tables[selectedTableIndex].data[monitorTick].ToString();
-            if (monitorTick < 16)
-                statusListLabel.Text += "\n0";
-            else
-                statusListLabel.Text += "\n" + ((monitorTick - 15) * 5).ToString() + "mL";
+
+            //Pump status.
+            if (Program.exp.tables[selectedTableIndex].data[monitorTick] > 600)
+                waterPumped += 2 + rand.Next(2);
+
+            statusListLabel.Text += "\n" + waterPumped.ToString() + "mL";
             
             ++monitorTick;
         }
