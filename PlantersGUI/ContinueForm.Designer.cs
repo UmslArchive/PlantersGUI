@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tablesDataGrid = new System.Windows.Forms.DataGridView();
             this.tablesLabel = new System.Windows.Forms.Label();
             this.tablesComboBox = new System.Windows.Forms.ComboBox();
@@ -37,6 +38,12 @@
             this.deviceLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.tableExportButton = new System.Windows.Forms.Button();
+            this.deviceMonitorTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableTimer = new System.Windows.Forms.Timer(this.components);
+            this.constraintLabel = new System.Windows.Forms.Label();
+            this.deviceListLabel = new System.Windows.Forms.Label();
+            this.statusListLabel = new System.Windows.Forms.Label();
+            this.constraintListLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGrid)).BeginInit();
             this.deviceMonitorGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +92,10 @@
             // 
             // deviceMonitorGroupBox
             // 
+            this.deviceMonitorGroupBox.Controls.Add(this.constraintListLabel);
+            this.deviceMonitorGroupBox.Controls.Add(this.statusListLabel);
+            this.deviceMonitorGroupBox.Controls.Add(this.deviceListLabel);
+            this.deviceMonitorGroupBox.Controls.Add(this.constraintLabel);
             this.deviceMonitorGroupBox.Controls.Add(this.deviceStatusLabel);
             this.deviceMonitorGroupBox.Controls.Add(this.deviceLabel);
             this.deviceMonitorGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,7 +110,7 @@
             // 
             this.deviceStatusLabel.AutoSize = true;
             this.deviceStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deviceStatusLabel.Location = new System.Drawing.Point(156, 20);
+            this.deviceStatusLabel.Location = new System.Drawing.Point(143, 20);
             this.deviceStatusLabel.Name = "deviceStatusLabel";
             this.deviceStatusLabel.Size = new System.Drawing.Size(43, 13);
             this.deviceStatusLabel.TabIndex = 1;
@@ -133,6 +144,56 @@
             this.tableExportButton.TabIndex = 14;
             this.tableExportButton.Text = "Export...";
             this.tableExportButton.UseVisualStyleBackColor = true;
+            // 
+            // deviceMonitorTimer
+            // 
+            this.deviceMonitorTimer.Interval = 1000;
+            this.deviceMonitorTimer.Tick += new System.EventHandler(this.DeviceMonitorTimer_Tick);
+            // 
+            // tableTimer
+            // 
+            this.tableTimer.Interval = 5000;
+            this.tableTimer.Tick += new System.EventHandler(this.TableTimer_Tick);
+            // 
+            // constraintLabel
+            // 
+            this.constraintLabel.AutoSize = true;
+            this.constraintLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.constraintLabel.Location = new System.Drawing.Point(245, 18);
+            this.constraintLabel.Name = "constraintLabel";
+            this.constraintLabel.Size = new System.Drawing.Size(72, 15);
+            this.constraintLabel.TabIndex = 2;
+            this.constraintLabel.Text = "Constraint";
+            // 
+            // deviceListLabel
+            // 
+            this.deviceListLabel.AutoSize = true;
+            this.deviceListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deviceListLabel.Location = new System.Drawing.Point(7, 42);
+            this.deviceListLabel.Name = "deviceListLabel";
+            this.deviceListLabel.Size = new System.Drawing.Size(57, 17);
+            this.deviceListLabel.TabIndex = 3;
+            this.deviceListLabel.Text = "DEVICE";
+            // 
+            // statusListLabel
+            // 
+            this.statusListLabel.AutoSize = true;
+            this.statusListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusListLabel.Location = new System.Drawing.Point(143, 42);
+            this.statusListLabel.Name = "statusListLabel";
+            this.statusListLabel.Size = new System.Drawing.Size(63, 17);
+            this.statusListLabel.TabIndex = 4;
+            this.statusListLabel.Text = "STATUS";
+            // 
+            // constraintListLabel
+            // 
+            this.constraintListLabel.AutoSize = true;
+            this.constraintListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.constraintListLabel.Location = new System.Drawing.Point(245, 42);
+            this.constraintListLabel.Name = "constraintListLabel";
+            this.constraintListLabel.Size = new System.Drawing.Size(97, 17);
+            this.constraintListLabel.TabIndex = 5;
+            this.constraintListLabel.Text = "CONSTRAINT";
             // 
             // ContinueForm
             // 
@@ -168,5 +229,11 @@
         private System.Windows.Forms.Label deviceLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button tableExportButton;
+        private System.Windows.Forms.Timer deviceMonitorTimer;
+        private System.Windows.Forms.Timer tableTimer;
+        private System.Windows.Forms.Label constraintLabel;
+        private System.Windows.Forms.Label constraintListLabel;
+        private System.Windows.Forms.Label statusListLabel;
+        private System.Windows.Forms.Label deviceListLabel;
     }
 }

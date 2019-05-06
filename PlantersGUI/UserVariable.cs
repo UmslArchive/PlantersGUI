@@ -55,6 +55,7 @@ namespace PlantersGUI
         //Data.
         public string deviceID;
         public string varName;
+        public string constraintString;
         public Constraint constraint;
         public ConstraintSetting currentSetting;
 
@@ -64,6 +65,7 @@ namespace PlantersGUI
             //Set string variables.
             deviceID = idString;
             varName = var;
+            constraintString = setting;
 
             //Set currentSetting based on passed setting string.
             switch (setting)
@@ -74,20 +76,24 @@ namespace PlantersGUI
 
                 case "<":
                     currentSetting = ConstraintSetting.LESS;
+
                     break;
 
                 case ">=":
                     currentSetting = ConstraintSetting.GREATEREQUAL;
+
                     break;
 
                 case "<=":
                     currentSetting = ConstraintSetting.LESSEQUAL;
+
                     break;
 
                 case "=":
                     currentSetting = ConstraintSetting.EQUAL;
+
                     break;
-                   
+
                 default: //Null case. (box unchecked)
                     currentSetting = ConstraintSetting.NULL;
                     break;
@@ -98,6 +104,15 @@ namespace PlantersGUI
                 constraint = new Constraint(cVal, currentSetting);
             else
                 constraint = null;
+
+            //add val.
+            if (constraint != null)
+            { 
+                if (constraintString[0] == '<' || constraintString[0] == '=')
+                    constraintString += " " + constraint.upperBound.ToString();
+                else
+                    constraintString += " " + constraint.lowerBound.ToString();
+            }
         }
 
         //Function that connects the device and assigns a name.

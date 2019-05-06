@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
 
 namespace PlantersGUI
 {
@@ -8,7 +10,7 @@ namespace PlantersGUI
         public string indepVariable, depVariable;
         public decimal refreshRate;
 
-        //public DataTable dataTable;
+        public List<int> data = new List<int>();
 
         //Constructor.
         public Table(string titleString, string indep, string dep, decimal refresh, string unit)
@@ -41,10 +43,41 @@ namespace PlantersGUI
                     break;
             }
 
-            //Initialize dataTable.
-            //dataTable = new DataTable(titleString);
-            //dataTable.Columns.Add(indepVariable);
-            //dataTable.Columns.Add(depVariable);
+            //Spoof Hydration Data.
+            Random rand = new Random();
+            for(int i = 0; i < 15; ++i)
+            {
+                //Determine + or -
+                int select = rand.Next(2);
+
+                //Add 15 seconds of data.
+                if(select > 0)
+                    data.Add(1000 + rand.Next(42));
+                else
+                    data.Add(1000 - rand.Next(42));
+            }
+
+            //Drop value to between 500 to 800 over 5 seconds.
+            for(int i = 0; i < 5; ++i)
+            {
+                data.Add(900 - i * 75 + rand.Next(42));
+            }
+
+            //Slowly drop over 60 seconds.
+            for(int i = 0; i < 60; ++i)
+            {
+                data.Add(700 - i * 2 + rand.Next(10));
+            }
+
+            //Hold steady for one hour. (water has now been dispensed.)
+            for(int i = 0; i < 3600; ++i)
+            {
+                int select = rand.Next(2);
+                if (select > 0)
+                    data.Add(600 + rand.Next(42));
+                else
+                    data.Add(600 - rand.Next(42));
+            }
         }
 
         //TODO: add data link for live data display in continueForm.
