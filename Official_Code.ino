@@ -59,7 +59,8 @@ void loop()
   //If the file is available, write to it.
   if(dataFile)                                    //Output to datalog.txt.
   {
-    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog + " |Water pumped thus far: " + finalWaterCount + "mL");
+    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog + " |Water pumped thus far: " 
+                   + finalWaterCount + "mL");
     dataFile.println();
     dataFile.close();
   }
