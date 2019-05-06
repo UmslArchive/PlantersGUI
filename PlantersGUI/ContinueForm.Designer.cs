@@ -71,8 +71,6 @@
             this.tablesComboBox.Name = "tablesComboBox";
             this.tablesComboBox.Size = new System.Drawing.Size(350, 21);
             this.tablesComboBox.TabIndex = 2;
-            this.tablesComboBox.SelectedIndexChanged += new System.EventHandler(this.TablesComboBox_SelectedIndexChanged);
-            this.tablesComboBox.SelectionChangeCommitted += new System.EventHandler(this.TablesComboBox_SelectionChangeCommitted);
             this.tablesComboBox.DropDownClosed += new System.EventHandler(this.TablesComboBox_DropDownClosed);
             // 
             // saveButton
@@ -96,7 +94,6 @@
             this.deviceMonitorGroupBox.TabIndex = 6;
             this.deviceMonitorGroupBox.TabStop = false;
             this.deviceMonitorGroupBox.Text = "Device Monitor";
-            this.deviceMonitorGroupBox.Enter += new System.EventHandler(this.DeviceMonitorGroupBox_Enter);
             // 
             // deviceStatusLabel
             // 

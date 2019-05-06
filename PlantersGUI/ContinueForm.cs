@@ -37,11 +37,6 @@ namespace PlantersGUI
             Program.entryForm.Show();
         }
 
-        private void TablesComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            
-        }
-
         private void ConstructDataGrid()
         {
             //Get selected table's index.
@@ -75,16 +70,6 @@ namespace PlantersGUI
                     tablesDataGrid.Rows.Add();
                 }
             }
-        }
-
-        private void TablesComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void TablesComboBox_TextUpdate(object sender, EventArgs e)
-        {
-            
         }
 
         private void TablesComboBox_DropDownClosed(object sender, EventArgs e)
