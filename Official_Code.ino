@@ -8,8 +8,9 @@ int soilPin = A1;                                 //Declare a variable for the s
 int soilPower = 7;                                //Variable for Soil moisture Power pin.
 
 int watertime = 30;                               //How long to water in seconds (100mL/minute).
-int waittime = 1;                                 //How long to wait between watering in intervals (3 second wait time from reading).
+int waittime = 1;                                 //How long to wait between watering in minutes.
 
+int waterCount = 0;
 int sensorValue = 0;                              //Value for storing moisture value.
 int moistureLevelHolder = 0;                      //Value hold for calculation.
 int moistureInterval = 0;                         //Help calculate our average moisture levels.
@@ -45,9 +46,11 @@ void loop()
 {  
   String moistureLog = "";                        //Make a string for assembling the data to log.
   String averageMoistureLog = "";                 //Make a string for average moisture logging.
+  String finalWaterCount = "";                    //Make a string of amount of water pumped since start.
   int sensor = analogRead(soilPin);               //Read Moisture sensors and append to the string.
   moistureLog += String(sensor);
   averageMoistureLog += String(averageMoistureLevel);
+  finalWaterCount += String(waterCount * 50);
 
   //Open the file. note that only one file can be open at a time,
   //So you have to close this one before opening another.
@@ -56,7 +59,7 @@ void loop()
   //If the file is available, write to it.
   if(dataFile)                                    //Output to datalog.txt.
   {
-    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog);
+    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog + " |Water pumped thus far: " + finalWaterCount + "mL");
     dataFile.println();
     dataFile.close();
   }
@@ -74,7 +77,7 @@ void loop()
 
   delay(1000);                                    //Delay for one second.
   
-  if(sensorValue < 1000)                          //Change value on simple testing.
+  if(sensorValue > 400)                           //Change value on simple testing.
   {
     digitalWrite(soilPower, LOW);                 //Turn D7 "Off".
     Serial.print("Pumping water \n");
@@ -87,20 +90,21 @@ void loop()
     digitalWrite(blinkPin, LOW);                  //Turn off the LED.
     delay(waittime * 1000);                       //Multiply by 60000 to translate minutes to milliseconds.
 
+    waterCount = waterCount + 1;
     Serial.print("Pumping stopped \n");
   }
 }
 
 int readSoil()
 {
-  digitalWrite(soilPower, HIGH);                    //turn D7 "On".
-  delay(100);                                       //wait 100 milliseconds.
-  sensorValue = analogRead(soilPin);                //Read the SIG value form sensor.
+  digitalWrite(soilPower, HIGH);                  //turn D7 "On".
+  delay(100);                                     //wait 100 milliseconds.
+  sensorValue = analogRead(soilPin);              //Read the SIG value form sensor.
 
   //Calculate our average moisture level.
   moistureLevelHolder = averageMoistureLevel + sensorValue; 
   moistureIntervals = moistureIntervals + 1;
   averageMoistureLevel = moistureLevelHolder / moistureIntervals;
   
-  return sensorValue;                               //Send current moisture value back to loop for SD readings.
+  return sensorValue;                             //Send current moisture value back to loop for SD readings.
 }
