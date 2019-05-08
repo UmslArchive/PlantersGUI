@@ -59,8 +59,7 @@ void loop()
   //If the file is available, write to it.
   if(dataFile)                                    //Output to datalog.txt.
   {
-    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog + " |Water pumped thus far: " 
-                   + finalWaterCount + "mL");
+    dataFile.print("Soil Moisture: " + moistureLog + " | Average value: " + averageMoistureLog + " |Water pumped thus far: " + finalWaterCount + "mL");
     dataFile.println();
     dataFile.close();
   }
@@ -78,7 +77,7 @@ void loop()
 
   delay(1000);                                    //Delay for one second.
   
-  if(sensorValue > 400)                           //Change value on simple testing.
+  if(sensorValue > 380)                          //Change value on simple testing.
   {
     digitalWrite(soilPower, LOW);                 //Turn D7 "Off".
     Serial.print("Pumping water \n");
@@ -98,14 +97,14 @@ void loop()
 
 int readSoil()
 {
-  digitalWrite(soilPower, HIGH);                  //turn D7 "On".
-  delay(100);                                     //wait 100 milliseconds.
-  sensorValue = analogRead(soilPin);              //Read the SIG value form sensor.
+  digitalWrite(soilPower, HIGH);                    //turn D7 "On".
+  delay(100);                                       //wait 100 milliseconds.
+  sensorValue = analogRead(soilPin);                //Read the SIG value form sensor.
 
   //Calculate our average moisture level.
   moistureLevelHolder = averageMoistureLevel + sensorValue; 
   moistureIntervals = moistureIntervals + 1;
   averageMoistureLevel = moistureLevelHolder / moistureIntervals;
   
-  return sensorValue;                             //Send current moisture value back to loop for SD readings.
+  return sensorValue;                               //Send current moisture value back to loop for SD readings.
 }
