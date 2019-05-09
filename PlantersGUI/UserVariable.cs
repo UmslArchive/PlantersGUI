@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace PlantersGUI
 {
@@ -15,6 +16,7 @@ namespace PlantersGUI
             NULL
         };
 
+        //Storage class for UserVariable upper and lower bounds.
         public class Constraint
         {
             public decimal lowerBound;
@@ -53,57 +55,60 @@ namespace PlantersGUI
         }
 
         //Data.
-        public string deviceID;
-        public string varName;
+        public string name;
+        public DeviceIO linkedDevice;
         public Constraint constraint;
-        public ConstraintSetting currentSetting;
+        public ConstraintSetting constraintSetting;
 
         //Constructor.
-        public UserVariable(string idString, string var, decimal cVal, string setting)
+        public UserVariable(string idString, string varName, decimal cVal, string setting)
         {
             //Set string variables.
-            deviceID = idString;
-            varName = var;
+            name = varName;
 
-            //Set currentSetting based on passed setting string.
+            //Link the IO device.
+            if (LinkIODevice() != 0)
+                MessageBox.Show("Device Link Error.");            
+                       
+            //Set constraintSetting based on passed setting string.
             switch (setting)
             {
                 case ">":
-                    currentSetting = ConstraintSetting.GREATER;
+                    constraintSetting = ConstraintSetting.GREATER;
                     break;
 
                 case "<":
-                    currentSetting = ConstraintSetting.LESS;
+                    constraintSetting = ConstraintSetting.LESS;
                     break;
 
                 case ">=":
-                    currentSetting = ConstraintSetting.GREATEREQUAL;
+                    constraintSetting = ConstraintSetting.GREATEREQUAL;
                     break;
 
                 case "<=":
-                    currentSetting = ConstraintSetting.LESSEQUAL;
+                    constraintSetting = ConstraintSetting.LESSEQUAL;
                     break;
 
                 case "=":
-                    currentSetting = ConstraintSetting.EQUAL;
+                    constraintSetting = ConstraintSetting.EQUAL;
                     break;
                    
                 default: //Null case. (box unchecked)
-                    currentSetting = ConstraintSetting.NULL;
+                    constraintSetting = ConstraintSetting.NULL;
                     break;
             }
 
             //Set the constraint.
-            if (currentSetting != ConstraintSetting.NULL)
-                constraint = new Constraint(cVal, currentSetting);
+            if (constraintSetting != ConstraintSetting.NULL)
+                constraint = new Constraint(cVal, constraintSetting);
             else
                 constraint = null;
         }
 
-        //Function that connects the device and assigns a name.
-        public void HandshakeDevice()
+        //Link an IO device to a user variable.
+        private int LinkIODevice()
         {
-            
+            return 0;
         }
     }
 }
