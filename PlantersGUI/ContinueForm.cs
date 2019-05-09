@@ -17,11 +17,6 @@ namespace PlantersGUI
             InitializeComponent();
         }
 
-        private void DeviceMonitorGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void ContinueForm_Load(object sender, EventArgs e)
         {
             //Load tables into tablesComboBox.

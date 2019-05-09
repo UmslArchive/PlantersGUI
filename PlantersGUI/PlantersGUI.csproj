@@ -152,6 +152,7 @@
     <Compile Include="ContinueForm.Designer.cs">
       <DependentUpon>ContinueForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeviceIO.cs" />
     <Compile Include="UserVariable.cs" />
     <Compile Include="EntryForm.cs">
       <SubType>Form</SubType>

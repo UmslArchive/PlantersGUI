@@ -93,7 +93,6 @@
             this.deviceMonitorGroupBox.TabIndex = 6;
             this.deviceMonitorGroupBox.TabStop = false;
             this.deviceMonitorGroupBox.Text = "Device Monitor";
-            this.deviceMonitorGroupBox.Enter += new System.EventHandler(this.DeviceMonitorGroupBox_Enter);
             // 
             // deviceStatusLabel
             // 

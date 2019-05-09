@@ -101,14 +101,9 @@ namespace PlantersGUI
         }
 
         //Function that connects the device and assigns a name.
-        public void connectDevice()
+        public void HandshakeDevice()
         {
             
-        }
-
-        public double readDevice()
-        {
-            return 0.0;
         }
     }
 }
