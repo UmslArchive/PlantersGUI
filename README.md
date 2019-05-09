@@ -1,4 +1,6 @@
-# Status Message : Currently working within "dween" branch. Make a branch from "dween" to contrib.
+# Status Message
+
+Currently working within "dween" branch. Make a branch from "dween" to contrib.
 
 # PlantersGUI
 
