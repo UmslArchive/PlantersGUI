@@ -139,7 +139,10 @@ namespace PlantersGUI
             foreach (Table table in Program.exp.tables)
             {
                 if (table.title == tablesComboBox.GetItemText(tablesComboBox.SelectedItem))
+                {
                     selectedTableIndex = Program.exp.tables.IndexOf(table);
+                    break;
+                }       
                 else
                     selectedTableIndex = -1;
             }
