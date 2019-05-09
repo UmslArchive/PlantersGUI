@@ -10,6 +10,8 @@ namespace PlantersGUI
         public List<DeviceIO> devices;
         public List<Table> tables;
 
+        private int deviceCount = 0;
+
         //Experiment initialization
         public Experiment()
         {
@@ -21,7 +23,10 @@ namespace PlantersGUI
             //Get device count.
 
             //Add devices.
-
+            for(int i = 0; i < deviceCount; ++i)
+            {
+                devices.Add(new DeviceIO("Test"));
+            }
         }
          
         //Save currently open experiment to file.
