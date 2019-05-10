@@ -86,7 +86,7 @@ namespace PlantersGUI
             bool isDuplicate = false;
             foreach(UserVariable uv in Program.exp.userVariables)
             {
-                if (uv.varName == variableTextBox.Text)
+                if (uv.name == variableTextBox.Text)
                     isDuplicate = true;
             }
 
@@ -145,7 +145,7 @@ namespace PlantersGUI
                 string newListItem = "";
 
                 //Append deviceID and varName.
-                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1).ToString() + ". " + uv.varName + "    " + uv.deviceID + "    ";
+                newListItem = (Program.exp.userVariables.IndexOf(uv) + 1).ToString() + ". " + uv.name + "    " + uv.linkedDevice.id + "    ";
 
                 //Append constraint.
                 if(uv.constraint != null)

@@ -45,8 +45,8 @@ namespace PlantersGUI
             {
                 foreach(UserVariable uv in Program.exp.userVariables)
                 {
-                    indepVarComboBox.Items.Add(uv.varName);
-                    depVarComboBox.Items.Add(uv.varName);
+                    indepVarComboBox.Items.Add(uv.name);
+                    depVarComboBox.Items.Add(uv.name);
                 }
             }
         }

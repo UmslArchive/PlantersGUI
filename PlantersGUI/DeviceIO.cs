@@ -6,7 +6,7 @@ namespace PlantersGUI
     {
 
         //Data.
-        string id;
+        public string id;
 
 
         //Constructor.
