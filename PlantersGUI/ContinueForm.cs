@@ -142,12 +142,13 @@ namespace PlantersGUI
             statusListString += waterPumped.ToString();
             statusListLabel.Text = statusListString;
 
-            //Increment main tick.
+            //Increment main tick count.
             ++mainTickCount;
         }
 
         private void ContinueForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //close the serial port connection to the arduino.
             dween.Close();
         }
 
@@ -183,6 +184,9 @@ namespace PlantersGUI
             UpdateTableIndex();
 
             MapTableToDataGridView();
+
+            //Select bottom row to cancel out autoscroll.
+            tablesDataGrid.FirstDisplayedScrollingRowIndex = tablesDataGrid.Rows.Count - 1;
 
         }
 
