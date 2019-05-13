@@ -5,7 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -18,10 +19,16 @@ namespace PlantersGUI
         bool pumpActive = false;
         int waterPumped = 0;
         int mainTickCount = 0;
+        int selectedTableIndex = -1;
+        bool songPlayed = false;
 
         //Active monitor strings.
         string deviceListString = "";
         string statusListString = "";
+
+        //Time
+        Stopwatch stopWatch = new Stopwatch();
+        string elapsedTime;
 
         public ContinueForm()
         {
@@ -35,6 +42,9 @@ namespace PlantersGUI
             {
                 tablesComboBox.Items.Add(table.title);
             }
+
+            //Set default table. Unfortunately means that there must be a table named "moisture" in experiment.
+            tablesComboBox.Text = "moisture";
 
             //Get moisture sensor's user variable index.
             int moistureUVIndex = -1;
@@ -60,6 +70,9 @@ namespace PlantersGUI
             deviceListLabel.Text = deviceListString;
             statusListString = "";
 
+            //Start stopWatch.
+            stopWatch.Start();
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -73,6 +86,24 @@ namespace PlantersGUI
 
             //Update Active Device Monitor.
             string readMoistureValue = dween.ReadLine();
+
+            //Calculate current elapsed time and create time string.
+            TimeSpan ts = stopWatch.Elapsed;
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
+
+            //Once per second.
+            if( mainTickCount != 0 && mainTickCount % 10 == 0)
+            {
+                //Update the tables.
+                UpdateTables("moisture", elapsedTime, readMoistureValue);
+                UpdateTables("pumped", elapsedTime, waterPumped.ToString());
+
+                //Display selected table.
+                DisplaySelectedTable();
+            }
+            
 
             //Convert string that is read from arduino to an integer.
             int convertedString;
@@ -98,6 +129,13 @@ namespace PlantersGUI
                 waterPumped += 2; //based on flow rate of the pump. amount pumped is not actually measured.
             }
 
+            if(!songPlayed && waterPumped > 200)
+            {
+                //play song.
+
+                songPlayed = true;
+            }
+
             //Set the labels.
             statusListString = "";
             statusListString += readMoistureValue + "\n";
@@ -112,5 +150,50 @@ namespace PlantersGUI
         {
             dween.Close();
         }
+
+        private void UpdateTableIndex()
+        {
+            //Get selected table's index.
+            foreach (Table table in Program.exp.tables)
+            {
+                if (table.title == tablesComboBox.GetItemText(tablesComboBox.SelectedItem))
+                {
+                    selectedTableIndex = Program.exp.tables.IndexOf(table);
+                    break;
+                }
+                else
+                    selectedTableIndex = -1;
+            }
+
+        }
+
+        //Function places the values that are in the active monitor into the corresponding table's DataTable.
+        private void UpdateTables(string tableToUpdate, string currentElapsedTime, string currentVal)
+        {
+            //Currently only works when creating a moisture table first then a waterpumped table after.
+            if (tableToUpdate == "moisture")
+                Program.exp.tables[0].AddRow(currentElapsedTime, currentVal);
+            else
+                Program.exp.tables[1].AddRow(currentElapsedTime, currentVal);
+        }
+
+        private void DisplaySelectedTable()
+        {
+            //Update the selected table index so that the correct table is displayed.
+            UpdateTableIndex();
+
+            MapTableToDataGridView();
+
+        }
+
+        //Function Maps DataTable object contained in table class to the datagridview object of ContinueForm.
+        private void MapTableToDataGridView()
+        {
+            BindingSource sbind = new BindingSource();
+            sbind.DataSource = Program.exp.tables[selectedTableIndex].data;
+            tablesDataGrid.Columns.Clear();
+            tablesDataGrid.DataSource = sbind;            
+        }
+
     }
 }

@@ -73,5 +73,18 @@ namespace PlantersGUI
             
             
         }
+
+        public void AddRow(string timeVal, string depVal)
+        {
+            string[] row = new string[2];
+            row[0] = timeVal;
+            row[1] = depVal;
+            data.Rows.Add(row);
+        }
+
+        public string ReadCell(int row, int col)
+        {
+            return data.Rows[row][col].ToString(); ;
+        }
     }
 }
