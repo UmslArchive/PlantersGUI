@@ -138,6 +138,7 @@
             this.tableExportButton.TabIndex = 14;
             this.tableExportButton.Text = "Export...";
             this.tableExportButton.UseVisualStyleBackColor = true;
+            this.tableExportButton.Click += new System.EventHandler(this.TableExportButton_Click);
             // 
             // mainTimer
             // 

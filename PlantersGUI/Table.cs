@@ -1,4 +1,7 @@
 ﻿using System.Data;
+using System.IO;
+using System.Text;
+using System;
 
 namespace PlantersGUI
 {
@@ -47,9 +50,24 @@ namespace PlantersGUI
         }
 
         //Function exports a table into a .csv file.
-        public void ExportCSV()
+        public void ExportCSV(string path)
         {
+            //Delete the file if it exists.
+            if (File.Exists(path))
+                File.Delete(path);
 
+            //Create the csv file.
+            using (FileStream fs = File.Create(path))
+            { 
+                //Write row by row.
+                foreach(DataRow row in data.Rows)
+                {
+                    byte[] bdata = Encoding.Default.GetBytes(row[0].ToString() + "," + row[1].ToString() + "\n");
+                    fs.Write(bdata, 0, bdata.Length);
+                }
+
+                fs.Close();
+            }
         }
 
         private void InitializeDataTable()

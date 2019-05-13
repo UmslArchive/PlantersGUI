@@ -30,6 +30,7 @@ namespace PlantersGUI
         Stopwatch stopWatch = new Stopwatch();
         string elapsedTime;
 
+        //Constructor.
         public ContinueForm()
         {
             InitializeComponent();
@@ -129,18 +130,18 @@ namespace PlantersGUI
                 waterPumped += 2; //based on flow rate of the pump. amount pumped is not actually measured.
             }
 
-            if(!songPlayed && waterPumped > 200)
-            {
-                //play song.
-
-                songPlayed = true;
-            }
-
             //Set the labels.
             statusListString = "";
             statusListString += readMoistureValue + "\n";
             statusListString += waterPumped.ToString();
             statusListLabel.Text = statusListString;
+
+            //Play song after enough water is pumped.
+            if (!songPlayed && waterPumped > 200)
+            {
+                
+                songPlayed = true;
+            }
 
             //Increment main tick count.
             ++mainTickCount;
@@ -185,7 +186,7 @@ namespace PlantersGUI
 
             MapTableToDataGridView();
 
-            //Select bottom row to cancel out autoscroll.
+            //Set the scroll to bottom row. Bug: user cannot scroll.
             tablesDataGrid.FirstDisplayedScrollingRowIndex = tablesDataGrid.Rows.Count - 1;
 
         }
@@ -199,5 +200,11 @@ namespace PlantersGUI
             tablesDataGrid.DataSource = sbind;            
         }
 
+        private void TableExportButton_Click(object sender, EventArgs e)
+        {
+            UpdateTableIndex();
+
+            Program.exp.tables[selectedTableIndex].ExportCSV(@"C:\Users\colby\Desktop\export.csv");
+        }
     }
 }
