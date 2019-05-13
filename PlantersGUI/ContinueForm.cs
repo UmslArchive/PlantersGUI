@@ -30,6 +30,9 @@ namespace PlantersGUI
         Stopwatch stopWatch = new Stopwatch();
         string elapsedTime;
 
+        //Table export.
+        readonly string filePath = @"C:\Users\colby\Desktop\export.csv";
+
         //Constructor.
         public ContinueForm()
         {
@@ -183,7 +186,8 @@ namespace PlantersGUI
         {
             //Update the selected table index so that the correct table is displayed.
             UpdateTableIndex();
-
+            
+            //Display the table.
             MapTableToDataGridView();
 
             //Set the scroll to bottom row. Bug: user cannot scroll.
@@ -205,7 +209,7 @@ namespace PlantersGUI
             UpdateTableIndex();
 
             //Export the currently selected table to a .csv file.
-            Program.exp.tables[selectedTableIndex].ExportCSV(@"C:\Users\colby\Desktop\export.csv");
+            Program.exp.tables[selectedTableIndex].ExportCSV(filePath);
         }
     }
 }

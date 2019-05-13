@@ -185,7 +185,8 @@
             this.deviceComboBox.FormattingEnabled = true;
             this.deviceComboBox.Items.AddRange(new object[] {
             "No Device",
-            "Moisture Sensor"});
+            "Moisture Sensor",
+            "Water Pump"});
             this.deviceComboBox.Location = new System.Drawing.Point(174, 37);
             this.deviceComboBox.Name = "deviceComboBox";
             this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
