@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tablesDataGrid = new System.Windows.Forms.DataGridView();
             this.tablesLabel = new System.Windows.Forms.Label();
             this.tablesComboBox = new System.Windows.Forms.ComboBox();
@@ -37,6 +38,9 @@
             this.deviceLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.tableExportButton = new System.Windows.Forms.Button();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.deviceListLabel = new System.Windows.Forms.Label();
+            this.statusListLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGrid)).BeginInit();
             this.deviceMonitorGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +88,8 @@
             // 
             // deviceMonitorGroupBox
             // 
+            this.deviceMonitorGroupBox.Controls.Add(this.statusListLabel);
+            this.deviceMonitorGroupBox.Controls.Add(this.deviceListLabel);
             this.deviceMonitorGroupBox.Controls.Add(this.deviceStatusLabel);
             this.deviceMonitorGroupBox.Controls.Add(this.deviceLabel);
             this.deviceMonitorGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +139,31 @@
             this.tableExportButton.Text = "Export...";
             this.tableExportButton.UseVisualStyleBackColor = true;
             // 
+            // mainTimer
+            // 
+            this.mainTimer.Enabled = true;
+            this.mainTimer.Tick += new System.EventHandler(this.MainTimer_Tick);
+            // 
+            // deviceListLabel
+            // 
+            this.deviceListLabel.AutoSize = true;
+            this.deviceListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deviceListLabel.Location = new System.Drawing.Point(10, 42);
+            this.deviceListLabel.Name = "deviceListLabel";
+            this.deviceListLabel.Size = new System.Drawing.Size(66, 17);
+            this.deviceListLabel.TabIndex = 2;
+            this.deviceListLabel.Text = "DEVICES";
+            // 
+            // statusListLabel
+            // 
+            this.statusListLabel.AutoSize = true;
+            this.statusListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusListLabel.Location = new System.Drawing.Point(159, 42);
+            this.statusListLabel.Name = "statusListLabel";
+            this.statusListLabel.Size = new System.Drawing.Size(63, 17);
+            this.statusListLabel.TabIndex = 3;
+            this.statusListLabel.Text = "STATUS";
+            // 
             // ContinueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +178,7 @@
             this.Controls.Add(this.tablesDataGrid);
             this.Name = "ContinueForm";
             this.Text = "My Experiment";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ContinueForm_FormClosed);
             this.Load += new System.EventHandler(this.ContinueForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGrid)).EndInit();
             this.deviceMonitorGroupBox.ResumeLayout(false);
@@ -167,5 +199,8 @@
         private System.Windows.Forms.Label deviceLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button tableExportButton;
+        private System.Windows.Forms.Timer mainTimer;
+        private System.Windows.Forms.Label statusListLabel;
+        private System.Windows.Forms.Label deviceListLabel;
     }
 }

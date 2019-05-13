@@ -46,8 +46,6 @@ namespace PlantersGUI
 
         }
 
-        //TODO: add data link for live data display in continueForm.
-
         //Function exports a table into a .csv file.
         public void ExportCSV()
         {

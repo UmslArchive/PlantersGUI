@@ -19,31 +19,31 @@ namespace PlantersGUI
         //Storage class for UserVariable upper and lower bounds.
         public class Constraint
         {
-            public decimal lowerBound;
-            public decimal upperBound;
+            public int lowerBound;
+            public int upperBound;
 
-            public Constraint(decimal constraintValue, ConstraintSetting setting)
+            public Constraint(int constraintValue, ConstraintSetting setting)
             {
                 switch (setting)
                 {
                     case ConstraintSetting.LESS:
-                        lowerBound = System.Decimal.MinValue;
-                        upperBound = constraintValue - 0.001M;
+                        lowerBound = System.Int32.MinValue;
+                        upperBound = constraintValue;
                         break;
 
                     case ConstraintSetting.GREATER:
-                        lowerBound = constraintValue + 0.001M;
-                        upperBound = System.Decimal.MaxValue;
+                        lowerBound = constraintValue;
+                        upperBound = System.Int32.MaxValue;
                         break;
 
                     case ConstraintSetting.LESSEQUAL:
-                        lowerBound = System.Decimal.MinValue;
+                        lowerBound = System.Int32.MinValue;
                         upperBound = constraintValue;
                         break;
 
                     case ConstraintSetting.GREATEREQUAL:
                         lowerBound = constraintValue;
-                        upperBound = System.Decimal.MaxValue;
+                        upperBound = System.Int32.MaxValue;
                         break;
 
                     default: //case EQUAL.
@@ -51,6 +51,13 @@ namespace PlantersGUI
                         upperBound = constraintValue;
                         break;
                 }
+            }
+
+            public string Get()
+            {
+                if (lowerBound < 5000 && lowerBound > -5000)
+                    return lowerBound.ToString();
+                return upperBound.ToString();
             }
         }
 
@@ -61,15 +68,11 @@ namespace PlantersGUI
         public ConstraintSetting constraintSetting;
 
         //Constructor.
-        public UserVariable(string idString, string varName, decimal cVal, string setting)
+        public UserVariable(string idString, string varName, int cVal, string setting)
         {
             //Set string variables.
             name = varName;
 
-            //Link the IO device.
-            if (LinkIODevice() != 0)
-                MessageBox.Show("Device Link Error.");            
-                       
             //Set constraintSetting based on passed setting string.
             switch (setting)
             {
@@ -92,7 +95,7 @@ namespace PlantersGUI
                 case "=":
                     constraintSetting = ConstraintSetting.EQUAL;
                     break;
-                   
+
                 default: //Null case. (box unchecked)
                     constraintSetting = ConstraintSetting.NULL;
                     break;
@@ -103,12 +106,11 @@ namespace PlantersGUI
                 constraint = new Constraint(cVal, constraintSetting);
             else
                 constraint = null;
+
+            //Link the device.
+            linkedDevice = new DeviceIO(idString);
         }
 
-        //Link an IO device to a user variable.
-        private int LinkIODevice()
-        {
-            return 0;
-        }
+        
     }
 }

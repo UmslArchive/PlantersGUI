@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.deviceManageTab = new System.Windows.Forms.TabPage();
+            this.userVariableListLabel = new System.Windows.Forms.Label();
             this.constraintCheckBox = new System.Windows.Forms.CheckBox();
             this.valueNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.applyButton = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.addTableButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.userVariableListLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.deviceManageTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).BeginInit();
@@ -83,6 +83,15 @@
             this.deviceManageTab.Text = "User Variables";
             this.deviceManageTab.UseVisualStyleBackColor = true;
             // 
+            // userVariableListLabel
+            // 
+            this.userVariableListLabel.AutoSize = true;
+            this.userVariableListLabel.Location = new System.Drawing.Point(31, 122);
+            this.userVariableListLabel.Name = "userVariableListLabel";
+            this.userVariableListLabel.Size = new System.Drawing.Size(124, 13);
+            this.userVariableListLabel.TabIndex = 9;
+            this.userVariableListLabel.Text = "USER_VARIABLE_LIST";
+            // 
             // constraintCheckBox
             // 
             this.constraintCheckBox.AutoSize = true;
@@ -99,7 +108,6 @@
             // 
             // valueNumericUpDown
             // 
-            this.valueNumericUpDown.DecimalPlaces = 2;
             this.valueNumericUpDown.Location = new System.Drawing.Point(371, 37);
             this.valueNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -176,7 +184,8 @@
             this.deviceComboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deviceComboBox.FormattingEnabled = true;
             this.deviceComboBox.Items.AddRange(new object[] {
-            "No Device"});
+            "No Device",
+            "Moisture Sensor"});
             this.deviceComboBox.Location = new System.Drawing.Point(174, 37);
             this.deviceComboBox.Name = "deviceComboBox";
             this.deviceComboBox.Size = new System.Drawing.Size(121, 21);
@@ -279,15 +288,6 @@
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // userVariableListLabel
-            // 
-            this.userVariableListLabel.AutoSize = true;
-            this.userVariableListLabel.Location = new System.Drawing.Point(31, 122);
-            this.userVariableListLabel.Name = "userVariableListLabel";
-            this.userVariableListLabel.Size = new System.Drawing.Size(124, 13);
-            this.userVariableListLabel.TabIndex = 9;
-            this.userVariableListLabel.Text = "USER_VARIABLE_LIST";
             // 
             // SetupForm
             // 

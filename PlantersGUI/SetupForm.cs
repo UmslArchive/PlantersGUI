@@ -94,9 +94,9 @@ namespace PlantersGUI
             if(!isDuplicate && variableTextBox.Text != "Type Name...")
             {
                 if(constraintCheckBox.Checked)
-                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, inequalityComboBox.Text));
+                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, (int)(valueNumericUpDown.Value), inequalityComboBox.Text));
                 else
-                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, valueNumericUpDown.Value, "NULL"));
+                    Program.exp.userVariables.Add(new UserVariable(deviceComboBox.Text, variableTextBox.Text, (int)(valueNumericUpDown.Value), "NULL"));
             }                                       
 
             UpdateUserVariableLabel();

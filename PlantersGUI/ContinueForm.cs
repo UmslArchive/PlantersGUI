@@ -6,12 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace PlantersGUI
 {
     public partial class ContinueForm : Form
     {
+        //Port for communication to dween.
+        SerialPort dween = new SerialPort("COM5", 9600);
+        bool pumpActive = false;
+        int waterPumped = 0;
+        int mainTickCount = 0;
+
+        //Active monitor strings.
+        string deviceListString = "";
+        string statusListString = "";
+
         public ContinueForm()
         {
             InitializeComponent();
@@ -24,12 +35,82 @@ namespace PlantersGUI
             {
                 tablesComboBox.Items.Add(table.title);
             }
+
+            //Get moisture sensor's user variable index.
+            int moistureUVIndex = -1;
+            foreach(UserVariable uv in Program.exp.userVariables)
+            {
+                if(uv.linkedDevice.id == "Moisture Sensor")
+                {
+                    moistureUVIndex = Program.exp.userVariables.IndexOf(uv);
+                }
+            }
+
+            //Open the port for arduino communication.
+            dween.Open();
+
+            //Get the moisture constraint.
+            string moistureConstraint = Program.exp.userVariables[moistureUVIndex].constraint.Get();
+
+            //Send to arduino.
+            dween.WriteLine(moistureConstraint);
+
+            //Initialize active monitor list strings.
+            deviceListString = "Moisture Sensor\nWater Pumped";
+            deviceListLabel.Text = deviceListString;
+            statusListString = "";
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
             Program.entryForm.Show();
+        }
+
+        private void MainTimer_Tick(object sender, EventArgs e)
+        {
+
+            //Update Active Device Monitor.
+            string readMoistureValue = dween.ReadLine();
+
+            //Convert string that is read from arduino to an integer.
+            int convertedString;
+
+            //The data the arduino sends in the first few ticks is corrupted. this is a workaround.
+            if (mainTickCount > 15)
+                convertedString = Int32.Parse(readMoistureValue); //could possibly use tryparse() to avoid exception.
+            else
+                convertedString = 669; //air
+            
+            //Activate the pump when the moisture level dips below user specified constraint.
+            if(convertedString < Program.exp.userVariables[0].constraint.upperBound)
+            {
+                pumpActive = true;
+            }
+            else
+            {
+                pumpActive = false;
+            }
+
+            if (pumpActive == true)
+            {
+                waterPumped += 2; //based on flow rate of the pump. amount pumped is not actually measured.
+            }
+
+            //Set the labels.
+            statusListString = "";
+            statusListString += readMoistureValue + "\n";
+            statusListString += waterPumped.ToString();
+            statusListLabel.Text = statusListString;
+
+            //Increment main tick.
+            ++mainTickCount;
+        }
+
+        private void ContinueForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dween.Close();
         }
     }
 }
