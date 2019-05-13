@@ -204,6 +204,7 @@ namespace PlantersGUI
         {
             UpdateTableIndex();
 
+            //Export the currently selected table to a .csv file.
             Program.exp.tables[selectedTableIndex].ExportCSV(@"C:\Users\colby\Desktop\export.csv");
         }
     }
