@@ -152,7 +152,18 @@ namespace PlantersGUI
 
                 _ = new ArduinoDriver.ChipTuneLoader();
 
+                Thread.Sleep(2000);
+
                 ArduinoDriver.ChipTuneLoader.Sing();
+
+
+                //export the table before program close.
+                UpdateTableIndex();
+
+                //Export the currently selected table to a .csv file.
+                Program.exp.tables[selectedTableIndex].ExportCSV(filePath);
+
+                Application.Exit();
 
                 songPlayed = true;
             }
