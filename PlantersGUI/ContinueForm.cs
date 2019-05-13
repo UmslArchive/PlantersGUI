@@ -24,7 +24,7 @@ namespace PlantersGUI
         //Water pump.
         bool pumpActive = false;
         int waterPumped = 0;
-       
+
         //Tunes.
         bool songPlayed = false;
 
@@ -112,14 +112,14 @@ namespace PlantersGUI
                 //Display selected table.
                 DisplaySelectedTable();
             }
-            
+
 
             //Convert string that is read from arduino to an integer.
             int convertedString;
 
             //The data the arduino sends in the first few ticks is corrupted. this is a workaround.
             if (mainTickCount > 15)
-                convertedString = Int32.Parse(readMoistureValue); //could possibly use tryparse() to avoid exception.
+                Int32.TryParse(readMoistureValue, out convertedString); //could possibly use tryparse() to avoid exception.
             else
                 convertedString = 669; //air
             
@@ -145,9 +145,15 @@ namespace PlantersGUI
             statusListLabel.Text = statusListString;
 
             //Play song after enough water is pumped.
-            if (!songPlayed && waterPumped > 200)
+            if (songPlayed == false && waterPumped >= 200)
             {
-                
+                dween.Close();
+                dween.Dispose();
+
+                _ = new ArduinoDriver.ChipTuneLoader();
+
+                ArduinoDriver.ChipTuneLoader.Sing();
+
                 songPlayed = true;
             }
 
