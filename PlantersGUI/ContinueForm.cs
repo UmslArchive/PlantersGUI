@@ -16,10 +16,16 @@ namespace PlantersGUI
     {
         //Port for communication to dween.
         SerialPort dween = new SerialPort("COM5", 9600);
+
+        //Table export.
+        int selectedTableIndex = -1;
+        readonly string filePath = @"C:\Users\colby\Desktop\export.csv";
+
+        //Water pump.
         bool pumpActive = false;
         int waterPumped = 0;
-        int mainTickCount = 0;
-        int selectedTableIndex = -1;
+       
+        //Tunes.
         bool songPlayed = false;
 
         //Active monitor strings.
@@ -27,11 +33,10 @@ namespace PlantersGUI
         string statusListString = "";
 
         //Time
+        int mainTickCount = 0;
         Stopwatch stopWatch = new Stopwatch();
         string elapsedTime;
 
-        //Table export.
-        readonly string filePath = @"C:\Users\colby\Desktop\export.csv";
 
         //Constructor.
         public ContinueForm()
